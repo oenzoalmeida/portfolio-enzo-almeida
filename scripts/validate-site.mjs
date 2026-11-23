@@ -40,4 +40,19 @@ for (const match of html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)) {
 }
 assert.ok(javascriptFiles >= 1, "Nenhum script JavaScript localizado");
 assert.doesNotMatch(html, /-----BEGIN [A-Z ]*PRIVATE KEY-----/);
+
+// O currículo deve ser baixável sem serviço externo e conter links atuais.
+const resumeUris = [...html.matchAll(/data:application\/pdf;base64,([A-Za-z0-9+/=]+)/g)].map((m) => m[1]);
+assert.equal(resumeUris.length, 3, "Esperados três links de download do currículo");
+assert.equal(new Set(resumeUris).size, 1, "As três ações devem entregar o mesmo currículo");
+const pdf = Buffer.from(resumeUris[0], "base64").toString("latin1");
+assert.ok(pdf.startsWith("%PDF-1."), "Cabeçalho PDF inválido");
+assert.match(pdf, /\/Type \/Catalog/);
+assert.match(pdf, /\/Type \/Page\b/);
+assert.match(pdf, /linkedin\.com\/in\/enzolara\//);
+assert.doesNotMatch(pdf, /linkedin\.com\/in\/oenzoalmeida\//);
+const startxref = pdf.match(/startxref\n(\d+)\n%%EOF/);
+assert.ok(startxref, "Trailer do PDF ausente");
+assert.ok(pdf.slice(Number(startxref[1])).startsWith("xref\n"), "Offset do xref inválido");
+
 console.log(`OK: HTML, ${ids.length} âncoras, ${imageTags.length} imagens e ${javascriptFiles} scripts validados.`);
