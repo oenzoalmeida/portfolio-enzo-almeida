@@ -2,6 +2,12 @@
 
 Código-fonte recuperado do portfólio profissional de Enzo Almeida. Esta versão é **autossuficiente**, com HTML, CSS e JavaScript em um único arquivo, sem dependências npm ou build obrigatório.
 
+## Site publicado
+
+- **Portfólio:** https://portfolio-enzo-almeida.vercel.app
+- **Hospedagem:** Vercel, projeto `portfolio-enzo-almeida` na equipe `tech-lead1`.
+- A Vercel informou status `READY` para a implantação; os previews permanecem protegidos por autenticação da equipe. O projeto foi implantado por envio de arquivos e **ainda não está conectado ao GitHub para deploy automático**.
+
 ## Como abrir
 
 Abra `index.html` no navegador ou execute um servidor estático local:
