@@ -18,3 +18,5 @@
 .project-cover .fallback{visibility:hidden}.project-cover:has(img[hidden]) .fallback,.project-cover:not(:has(img)) .fallback{visibility:visible}.project-cover:has(img[hidden]) .cover-name{visibility:hidden}.project-cover .cover-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tile:target{outline:2px solid var(--mint);outline-offset:4px}.tile{scroll-margin-top:96px}
 
 @media(max-width:900px){.case-layout>aside{grid-row:1}.case-layout>article{grid-row:2}}@media(max-width:680px){.case .case-hero h1{font-size:clamp(28px,8.2vw,44px);letter-spacing:-.035em;overflow-wrap:normal}.case .case-hero{padding-bottom:22px}}
+
+.language-switch{font-weight:700;border:1px solid var(--line);border-radius:6px;padding:4px 10px!important}.contact .cta a[href^='mailto:']{overflow-wrap:anywhere;max-width:100%}
