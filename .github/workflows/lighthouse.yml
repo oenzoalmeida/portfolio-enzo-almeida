@@ -1,0 +1,50 @@
+name: Lighthouse - auditoria do portfolio
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/lighthouse.yml'
+permissions:
+  contents: read
+jobs:
+  lighthouse:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - name: Auditar paginas locais
+        shell: bash
+        run: |
+          mkdir -p lighthouse-reports
+          python3 -m http.server 8765 --bind 127.0.0.1 --directory dist > /tmp/portfolio-http.log 2>&1 &
+          server=$!
+          trap 'kill "$server" || true' EXIT
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8765/ >/dev/null && break; sleep 1; done
+          export CHROME_PATH="$(command -v google-chrome || command -v chromium)"
+          npm install --prefix /tmp/lighthouse-audit --no-audit --no-fund lighthouse@12.8.2
+          for lang in pt en; do
+            prefix=""
+            if [ "$lang" = en ]; then prefix="en/"; fi
+            for page in home queueflow; do
+              path="$prefix"
+              if [ "$page" != home ]; then path="${prefix}projetos/$page/"; fi
+              for device in mobile desktop; do
+                args=()
+                if [ "$device" = desktop ]; then args+=(--preset=desktop); fi
+                /tmp/lighthouse-audit/node_modules/.bin/lighthouse "http://127.0.0.1:8765/$path" "${args[@]}" --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output=html --output-path="lighthouse-reports/$lang-$page-$device" --quiet
+              done
+            done
+          done
+          node --input-type=module -e 'import fs from "node:fs"; for(const f of fs.readdirSync("lighthouse-reports").filter(x=>x.endsWith(".json"))){const r=JSON.parse(fs.readFileSync("lighthouse-reports/"+f));if(r.runtimeError)throw Error(r.runtimeError.message);console.log(f,JSON.stringify(Object.fromEntries(Object.entries(r.categories).map(([k,v])=>[k,Math.round(v.score*100)]))));}' | tee lighthouse-reports/scores.txt
+          cat lighthouse-reports/scores.txt >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-reports
+          path: lighthouse-reports/
