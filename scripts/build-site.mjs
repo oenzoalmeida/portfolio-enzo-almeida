@@ -13,6 +13,6 @@ for(const id of ids){
  if(png.width!==1200||png.height!==630) throw Error('Dimensão OG inválida: '+id);
  writeFileSync(join(output,'assets','og',id+'.png'),png.asPng());
 }
-console.log('Build estático: 7 páginas e 6 imagens OG de 1200 × 630.');
+console.log('Build estático: 14 páginas e 6 imagens OG de 1200 × 630.');
 
 await import('./build-resume-en.mjs');
