@@ -5,3 +5,9 @@ Site estático com seis estudos de caso, CSS e JavaScript compartilhados. Captur
 Execute `python -m http.server 8000` na raiz. Validação estática: `node scripts/validate-site.mjs`. O CI também executa testes de navegador e acessibilidade. As artes SVG em `assets/og/` são fontes para futuras imagens de compartilhamento PNG.
 
 Produção: https://portfolio-enzo-almeida.vercel.app/
+
+## Publicação
+
+A versão anterior foi publicada por envio de arquivos à Vercel. O README da main informa que o projeto não estava conectado ao GitHub e que previews exigem autenticação. Confira a configuração antes de publicar. Não é necessário build para servir esta versão estática.
+
+Links antigos `/#estudo-<projeto>` são encaminhados para as páginas individuais quando JavaScript está disponível.

@@ -9,3 +9,5 @@
 .visual img[hidden],.screenshot img[hidden]{display:none}
 
 .skillgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.skill .tags{margin:12px 0 0}.skill h3{margin:0 0 12px}.tilelinks{gap:8px 14px}.tilelinks a{min-height:44px}.hero .cta{gap:10px}.visual{isolation:isolate}.visual img{background:#141d2b}.skip{top:0}@media(max-width:680px){.skillgrid{grid-template-columns:1fr}.hero .cta .btn{min-height:44px}.navlinks a{min-height:44px}.tilebody{padding:20px}}
+
+.skillgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.skill .tags{margin:14px 0 0}.skill h3{margin:0}.architecture-flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0 28px;padding:0;list-style:none}.architecture-flow li{border:1px solid var(--line);border-radius:8px;padding:10px 14px!important;background:var(--panel);font-size:14px!important}.architecture-flow li:not(:last-child)::after{content:' →';color:var(--mint)}@media(max-width:680px){.skillgrid{grid-template-columns:1fr}}
