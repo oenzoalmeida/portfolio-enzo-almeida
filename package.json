@@ -1,0 +1,19 @@
+{
+  "name": "portfolio-enzo-almeida",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "validate": "node scripts/validate-site.mjs",
+    "test": "playwright test",
+    "check:demos": "node scripts/check-demos.mjs"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "2.6.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.51.1",
+    "@axe-core/playwright": "4.10.2"
+  }
+}

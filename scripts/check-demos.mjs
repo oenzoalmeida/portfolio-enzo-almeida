@@ -1,0 +1,5 @@
+import {writeFileSync} from 'node:fs';
+const urls={QueueFlow:'https://queueflow-backend-oe.azurewebsites.net',PratoJa:'https://18.220.70.13.sslip.io',ConfereVision:'https://conferevision.vercel.app',AutoCiclo:'https://autociclo.vercel.app',EventPass:'https://eventpass.3.149.24.102.sslip.io/demo'};
+const results=await Promise.all(Object.entries(urls).map(async([project,url])=>{const start=performance.now();try{const response=await fetch(url,{signal:AbortSignal.timeout(25000),redirect:'follow',headers:{'user-agent':'PortfolioLinkCheck/1.0'}});const status=response.status;const type=response.headers.get('content-type')||'';await response.body?.cancel();return{project,url,finalUrl:response.url,status,type,elapsedMs:Math.round(performance.now()-start),reachable:response.ok,html:type.includes('text/html')};}catch(e){return{project,url,reachable:false,elapsedMs:Math.round(performance.now()-start),error:String(e.cause?.code||e.name)};}}));
+writeFileSync('demo-report.json',JSON.stringify({checkedAt:new Date().toISOString(),results},null,2));
+console.log(JSON.stringify(results,null,2));

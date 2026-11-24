@@ -1,15 +1,26 @@
 # Portfólio de Enzo Almeida
 
-Site estático com seis estudos de caso, CSS e JavaScript compartilhados. Capturas documentais locais em `assets/projects/` e currículo em `assets/curriculo-enzo-almeida.pdf`.
+Site estático com seis estudos de caso, CSS e JavaScript compartilhados. As capturas são armazenadas localmente e o currículo é um PDF único.
 
-Execute `python -m http.server 8000` na raiz. Validação estática: `node scripts/validate-site.mjs`. O CI também executa testes de navegador e acessibilidade. As artes SVG em `assets/og/` são fontes para futuras imagens de compartilhamento PNG.
+## Desenvolvimento
 
-Produção: https://portfolio-enzo-almeida.vercel.app/
+Requer Node.js 22 e Python para os testes de navegador.
+
+```sh
+npm install
+npm run build
+npm run validate
+python -m http.server 8000 --directory dist
+```
+
+Acesse http://localhost:8000. O build gera as seis imagens Open Graph em PNG a partir das fontes SVG em `assets/og/` e copia o site para `dist/`. O site entregue ao navegador continua sem dependências JavaScript externas.
+
+Testes: `npx playwright install chromium` e `npm test`. O CI testa desktop e mobile, acessibilidade, rotas, imagens, currículo e orçamento de transferência. A verificação de demonstrações externas gera `demo-report.json` separadamente; uma indisponibilidade externa não reprova o portfólio.
 
 ## Publicação
 
-A versão anterior foi publicada por envio de arquivos à Vercel. O README da main informa que o projeto não estava conectado ao GitHub e que previews exigem autenticação. Confira a configuração antes de publicar. Não é necessário build para servir esta versão estática.
+Produção: https://portfolio-enzo-almeida.vercel.app/
 
-Links antigos `/#estudo-<projeto>` são encaminhados para as páginas individuais quando JavaScript está disponível.
+A configuração versionada da Vercel aponta para `dist/`. A versão anterior foi publicada manualmente; confira a integração e as permissões de preview antes de publicar. Links antigos `/#estudo-<projeto>` encaminham para páginas individuais quando JavaScript está disponível.
 
-As miniaturas da página inicial usam capturas documentais locais, com tratamento visual comum. As imagens de compartilhamento ainda usam as capturas PNG existentes (PenteFino usa a imagem geral até haver PNG próprio). Os testes geram capturas desktop e mobile em `browser-audit`.
+PenteFino é privado e sua capa é ilustrativa, não uma captura do sistema.

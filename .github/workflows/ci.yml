@@ -13,12 +13,30 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node scripts/validate-site.mjs
-      - run: npm install --no-save --no-package-lock @playwright/test@1.51.1 @axe-core/playwright@4.10.2
+      - run: npm install --no-audit --no-fund
+      - run: npm run build
+      - run: npm run validate
       - run: npx playwright install --with-deps chromium
-      - run: npx playwright test
+      - run: npm test
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: browser-audit
           path: test-results/
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: static-site
+          path: dist/
+  demo-links:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/check-demos.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: demo-link-report
+          path: demo-report.json
