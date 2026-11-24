@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://portfolio-enzo-almeida.vercel.app/sitemap.xml

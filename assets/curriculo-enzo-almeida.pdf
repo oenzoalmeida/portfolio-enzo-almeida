@@ -1,0 +1,87 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [7 0 R 8 0 R 9 0 R] >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 3558 >>
+stream
+0.09 0.13 0.21 rg BT /F2 23 Tf 1 0 0 1 46 781 Tm (ENZO ALMEIDA) Tj ET
+0.15 0.31 0.53 rg BT /F2 11 Tf 1 0 0 1 46 755 Tm (DESENVOLVEDOR DE SOFTWARE | FULL STACK) Tj ET
+0.31 0.38 0.46 rg BT /F1 9 Tf 1 0 0 1 46 730 Tm (Ribeirão Preto, SP  |  github.com/oenzoalmeida  |  linkedin.com/in/enzolara/) Tj ET
+0.83 0.87 0.92 RG 0.7 w 46 709 m 549 709 l S
+0.15 0.31 0.53 rg BT /F2 10 Tf 1 0 0 1 46 678 Tm (PERFIL PROFISSIONAL) Tj ET
+0.83 0.87 0.92 RG 0.7 w 46 670 m 549 670 l S
+0.09 0.13 0.21 rg BT /F1 10 Tf 1 0 0 1 46 654 Tm (Desenvolvedor de Software Júnior / Full Stack na Zé Registra. Atuação em sistemas internos,) Tj ET
+0.09 0.13 0.21 rg BT /F1 10 Tf 1 0 0 1 46 639 Tm (novas funcionalidades, manutenção, correção de bugs, testes e melhorias de usabilidade.) Tj ET
+0.09 0.13 0.21 rg BT /F1 10 Tf 1 0 0 1 46 624 Tm (Estudante de Ciência da Computação na UNIP desde 2024.) Tj ET
+0.15 0.31 0.53 rg BT /F2 10 Tf 1 0 0 1 46 589 Tm (EXPERIÊNCIA) Tj ET
+0.83 0.87 0.92 RG 0.7 w 46 581 m 549 581 l S
+0.09 0.13 0.21 rg BT /F2 10 Tf 1 0 0 1 46 567 Tm (Zé Registra | Desenvolvedor de Software Júnior) Tj ET
+0.09 0.13 0.21 rg BT /F1 9.8 Tf 1 0 0 1 46 551 Tm (Sistemas internos, APIs, manutenção de aplicações, testes, evolução de funcionalidades e UX.) Tj ET
+0.09 0.13 0.21 rg BT /F1 9.8 Tf 1 0 0 1 46 535 Tm (Tecnologias: Java, Spring Boot, JavaScript, React e PostgreSQL.) Tj ET
+0.09 0.13 0.21 rg BT /F2 10 Tf 1 0 0 1 46 505 Tm (Desenvolvimento freelancer | Desde 2025) Tj ET
+0.09 0.13 0.21 rg BT /F1 9.8 Tf 1 0 0 1 46 489 Tm (Projetos independentes e desenvolvimento de aplicações web.) Tj ET
+0.15 0.31 0.53 rg BT /F2 10 Tf 1 0 0 1 46 457 Tm (PROJETOS SELECIONADOS) Tj ET
+0.83 0.87 0.92 RG 0.7 w 46 449 m 549 449 l S
+0.09 0.13 0.21 rg BT /F2 9.8 Tf 1 0 0 1 46 433 Tm (QueueFlow) Tj ET
+0.31 0.38 0.46 rg BT /F1 9 Tf 1 0 0 1 46 418 Tm (Gestão de filas em tempo real | Java, Spring Boot, React e WebSocket) Tj ET
+0.09 0.13 0.21 rg BT /F2 9.8 Tf 1 0 0 1 46 402 Tm (PratoJá) Tj ET
+0.31 0.38 0.46 rg BT /F1 9 Tf 1 0 0 1 46 387 Tm (Cardápio multiloja | Spring Boot, Thymeleaf, PostgreSQL e Flyway) Tj ET
+0.09 0.13 0.21 rg BT /F2 9.8 Tf 1 0 0 1 46 371 Tm (ConfereVision) Tj ET
+0.31 0.38 0.46 rg BT /F1 9 Tf 1 0 0 1 46 356 Tm (Conferência visual | Python, Django, OpenCV e YOLOX) Tj ET
+0.09 0.13 0.21 rg BT /F2 9.8 Tf 1 0 0 1 46 340 Tm (AutoCiclo) Tj ET
+0.31 0.38 0.46 rg BT /F1 9 Tf 1 0 0 1 46 325 Tm (Histórico de veículos | Next.js, TypeScript e Supabase) Tj ET
+0.09 0.13 0.21 rg BT /F2 9.8 Tf 1 0 0 1 46 309 Tm (EventPass) Tj ET
+0.31 0.38 0.46 rg BT /F1 9 Tf 1 0 0 1 46 294 Tm (Eventos, ingressos QR Code e check-in | React e Node.js) Tj ET
+0.15 0.31 0.53 rg BT /F2 10 Tf 1 0 0 1 46 258 Tm (COMPETÊNCIAS) Tj ET
+0.83 0.87 0.92 RG 0.7 w 46 250 m 549 250 l S
+0.09 0.13 0.21 rg BT /F1 9.8 Tf 1 0 0 1 46 236 Tm (Backend: Java, Spring Boot, Python, Django e Node.js.) Tj ET
+0.09 0.13 0.21 rg BT /F1 9.8 Tf 1 0 0 1 46 219 Tm (Frontend: JavaScript, TypeScript, React e Next.js.) Tj ET
+0.09 0.13 0.21 rg BT /F1 9.8 Tf 1 0 0 1 46 202 Tm (Dados e entrega: PostgreSQL, Supabase, Git, Docker e testes automatizados.) Tj ET
+0.15 0.31 0.53 rg BT /F2 10 Tf 1 0 0 1 46 166 Tm (FORMAÇÃO) Tj ET
+0.83 0.87 0.92 RG 0.7 w 46 158 m 549 158 l S
+0.09 0.13 0.21 rg BT /F1 9.8 Tf 1 0 0 1 46 143 Tm (Ciência da Computação | Universidade Paulista \(UNIP\) | Desde 2024) Tj ET
+0.83 0.87 0.92 RG 0.7 w 46 75 m 549 75 l S
+0.31 0.38 0.46 rg BT /F1 8.5 Tf 1 0 0 1 46 55 Tm (Portfólio: portfolio-enzo-almeida.vercel.app) Tj ET
+0.31 0.38 0.46 rg BT /F1 8 Tf 1 0 0 1 46 39 Tm (Atualizado em novembro de 2026) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Annot /Subtype /Link /Rect [385 720 550 742] /Border [0 0 0] /A << /S /URI /URI (https://www.linkedin.com/in/enzolara/) >> >>
+endobj
+8 0 obj
+<< /Type /Annot /Subtype /Link /Rect [157 720 385 742] /Border [0 0 0] /A << /S /URI /URI (https://github.com/oenzoalmeida) >> >>
+endobj
+9 0 obj
+<< /Type /Annot /Subtype /Link /Rect [46 47 335 69] /Border [0 0 0] /A << /S /URI /URI (https://portfolio-enzo-almeida.vercel.app) >> >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000285 00000 n 
+0000000382 00000 n 
+0000000484 00000 n 
+0000004093 00000 n 
+0000004244 00000 n 
+0000004389 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+4541
+%%EOF
