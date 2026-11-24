@@ -1,12 +1,12 @@
 # Portfólio de Enzo Almeida
 
-Código-fonte recuperado do portfólio profissional de Enzo Almeida. Esta versão é **autossuficiente**, com HTML, CSS e JavaScript em um único arquivo, sem dependências npm ou build obrigatório.
+Este repositório reúne o código do meu portfólio profissional. O site usa HTML, CSS e JavaScript em um único arquivo e pode ser executado sem instalar dependências.
 
 ## Site publicado
 
 - **Portfólio:** https://portfolio-enzo-almeida.vercel.app
 - **Hospedagem:** Vercel, projeto `portfolio-enzo-almeida` na equipe `tech-lead1`.
-- A Vercel informou status `READY` para a implantação; os previews permanecem protegidos por autenticação da equipe. O projeto foi implantado por envio de arquivos e **ainda não está conectado ao GitHub para deploy automático**.
+- O site foi publicado por envio de arquivos à Vercel. Os ambientes de preview exigem autenticação e o projeto **ainda não está conectado ao GitHub para deploy automático**.
 
 ## Como abrir
 
@@ -29,11 +29,11 @@ Depois, visite `http://localhost:8000`.
 
 - As imagens dos projetos são carregadas de `raw.githubusercontent.com`, exigindo conexão com a internet.
 - As demonstrações externas podem ter restrições de disponibilidade ou exigir login.
-- A publicação do **código-fonte neste GitHub não ativa automaticamente o GitHub Pages**, nem comprova que um domínio público está configurado.
-- Nenhuma métrica ou depoimento de cliente foi inventado.
+- O domínio público utiliza a Vercel, não o GitHub Pages.
+- Os estudos de caso não incluem resultados quantitativos sem evidências.
 
 ## Contato
 
 [GitHub](https://github.com/oenzoalmeida) · [LinkedIn](https://www.linkedin.com/in/enzolara/)
 
-Este repositório contém uma versão recuperada do portfólio, preservando a implementação original em HTML/CSS/JavaScript e corrigindo o link do LinkedIn.
+A versão publicada mantém a estrutura original em HTML, CSS e JavaScript.
