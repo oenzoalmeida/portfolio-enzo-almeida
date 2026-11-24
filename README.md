@@ -1,11 +1,7 @@
 # Portfólio de Enzo Almeida
 
-Site estático sem dependências de runtime. Página inicial e seis estudos de caso independentes, com CSS e JavaScript compartilhados.
+Site estático com seis estudos de caso, CSS e JavaScript compartilhados. Capturas documentais locais em `assets/projects/` e currículo em `assets/curriculo-enzo-almeida.pdf`.
 
-## Desenvolvimento
-
-Execute `python -m http.server 8000` na raiz e acesse `http://localhost:8000`. Valide com `node scripts/validate-site.mjs`.
-
-O currículo está em `assets/curriculo-enzo-almeida.pdf`. As capturas documentais são externas e as demonstrações dependem de seus respectivos serviços. O projeto PenteFino é privado.
+Execute `python -m http.server 8000` na raiz. Validação estática: `node scripts/validate-site.mjs`. O CI também executa testes de navegador e acessibilidade. As artes SVG em `assets/og/` são fontes para futuras imagens de compartilhamento PNG.
 
 Produção: https://portfolio-enzo-almeida.vercel.app/
