@@ -6,7 +6,7 @@ Este repositório reúne o código do meu portfólio profissional. O site usa HT
 
 - **Portfólio:** https://portfolio-enzo-almeida.vercel.app
 - **Hospedagem:** Vercel, projeto `portfolio-enzo-almeida` na equipe `tech-lead1`.
-- O site foi publicado por envio de arquivos à Vercel. Os ambientes de preview exigem autenticação e o projeto **ainda não está conectado ao GitHub para deploy automático**.
+- O projeto possui os domínios listados na Vercel. A configuração de integração automática com o GitHub deve ser confirmada antes de publicar novas versões.
 
 ## Como abrir
 
@@ -21,7 +21,7 @@ Depois, visite `http://localhost:8000`.
 ## Conteúdo
 
 - Apresentação profissional, experiência e formação
-- Projetos e estudos de caso com imagens documentais
+- Projetos e estudos de caso com capturas de tela dos projetos
 - Links para repositórios e demonstrações
 - Layout responsivo e navegação com filtros
 
