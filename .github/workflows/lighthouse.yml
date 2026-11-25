@@ -22,6 +22,17 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npm run build
+      - run: npm run validate
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+      - run: npm run check:demos
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: expansion-validation
+          path: |
+            test-results/
+            demo-report.json
       - name: Auditar paginas locais
         shell: bash
         run: |
