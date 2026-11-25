@@ -1,6 +1,6 @@
 # Portfólio de Enzo Almeida
 
-Site estático com seis estudos de caso, CSS e JavaScript compartilhados. As capturas são armazenadas localmente e o currículo é um PDF único.
+Site de apresentação profissional de Enzo Almeida, desenvolvedor de software júnior na Zé Registra e estudante de Ciência da Computação. Contém seis estudos de caso de projetos pessoais, páginas em português e inglês, CSS e JavaScript compartilhados, capturas locais e currículos nos dois idiomas.
 
 ## Desenvolvimento
 
@@ -24,3 +24,7 @@ Produção: https://portfolio-enzo-almeida.vercel.app/
 A configuração versionada da Vercel aponta para `dist/`. A versão anterior foi publicada manualmente; confira a integração e as permissões de preview antes de publicar. Links antigos `/#estudo-<projeto>` encaminham para páginas individuais quando JavaScript está disponível.
 
 PenteFino é privado e sua capa é ilustrativa, não uma captura do sistema.
+
+## Diretriz editorial
+
+O portfólio documenta a atuação profissional atual, a formação e os projetos pessoais do autor. Em ambos os idiomas, preserve o vínculo atual com a Zé Registra, diferencie projetos pessoais e experiências independentes da atividade na empresa e evite linguagem que sinalize busca de emprego, disponibilidade para contratação ou intenção de mudança profissional. Os canais de contato servem à apresentação profissional e à troca de experiências. Preserve fatos verificáveis, sem exagerar senioridade ou atribuir projetos pessoais à empresa.

@@ -13,3 +13,7 @@ for(const path of paths){const html=readFileSync(path,'utf8');assert.doesNotMatc
 for(const id of ids){const png=readFileSync('assets/og/'+id+'.png');assert.equal(png.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.equal(png.readUInt32BE(16),1200);assert.equal(png.readUInt32BE(20),630);assert.ok(png.length>5000,'Imagem OG possivelmente vazia: '+id);assert.ok(readFileSync('projetos/'+id+'/index.html','utf8').includes('/assets/og/'+id+'.png'));}
 
 for(const name of ['curriculo-enzo-almeida.pdf','curriculo-enzo-almeida-en.pdf']){const pdf=readFileSync('assets/'+name).toString('latin1');assert.ok(pdf.startsWith('%PDF-'));assert.ok(pdf.includes('mailto:enzoalmeida.dev@gmail.com'));assert.ok(pdf.includes('QueueFlow')&&pdf.includes('Flyway'));}
+
+// Positioning regression check: inspect public copy in both languages.
+for (const path of paths) { const html=readFileSync(path,'utf8'); assert.doesNotMatch(html, /oportunidades profissionais|career opportunities|open to work|disponível para contratação|buscando emprego|seeking (?:a job|new opportunities)/i, path); }
+for (const path of ['index.html','en/index.html']) { const html=readFileSync(path,'utf8'); assert.match(html,/Zé Registra/); assert.match(html,/"worksFor"\s*:/); }
