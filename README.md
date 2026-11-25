@@ -30,4 +30,4 @@ PenteFino é privado e sua capa é ilustrativa, não uma captura do sistema.
 O portfólio documenta a atuação profissional atual, a formação e os projetos pessoais do autor. Em ambos os idiomas, preserve o vínculo atual com a Zé Registra, diferencie projetos pessoais e experiências independentes da atividade na empresa e evite linguagem que sinalize busca de emprego, disponibilidade para contratação ou intenção de mudança profissional. Os canais de contato servem à apresentação profissional e à troca de experiências. Preserve fatos verificáveis, sem exagerar senioridade ou atribuir projetos pessoais à empresa.
 
 
-Os estudos complementares usam capas ilustrativas identificadas como tais. Projetos privados não apontam para o repositório nem para ambientes internos. O Passaporte Área 51 permanece fora desta expansão até autorização específica de divulgação.
+Os estudos complementares usam capturas públicas revisadas quando disponíveis e capas ilustrativas identificadas como tais nos demais casos. Projetos privados não apontam para o repositório nem para ambientes internos. O Passaporte Área 51 permanece fora desta expansão até autorização específica de divulgação.

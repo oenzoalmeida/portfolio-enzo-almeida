@@ -1,8 +1,9 @@
 name: Validar portfólio estático
 on:
   push:
-    branches: [main, 'feat/portfolio-expansao-projetos-20261125']
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:

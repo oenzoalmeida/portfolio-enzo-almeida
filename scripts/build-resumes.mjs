@@ -104,7 +104,7 @@ function premium(lang) {
     </div>`).join('');
   const foot1 = `<div class="foot"><span>${esc(d.identity.name)} · ${esc(d.documentTitles.premium[lang])}</span><span>${esc(d.updated[lang])} · 1/2</span></div>`;
   const foot2 = `<div class="foot"><span>${esc(d.identity.name)} · ${esc(d.documentTitles.premium[lang])}</span><span>${esc(d.updated[lang])} · 2/2</span></div>`;
-  return `<!DOCTYPE html><html lang="${lang === 'pt' ? 'pt-BR' : 'en'}"><head><meta charset="utf-8"><style>${premiumCss}</style></head><body>
+  return `<!DOCTYPE html><html lang="${lang === 'pt' ? 'pt-BR' : 'en'}"><head><meta charset="utf-8"><title>${esc(d.identity.name)} · ${esc(d.documentTitles.premium[lang])}</title><style>${premiumCss}</style></head><body>
 <div class="page">
   <div class="band">
     <div class="name">${esc(d.identity.name)}<span class="dot">.</span></div>
@@ -172,7 +172,7 @@ function ats(lang) {
       <p>${esc(t(p.description))} ${esc(lang === 'pt' ? 'Tecnologias' : 'Technologies')}: ${esc(p.stack.join(', '))}.</p>
       <ul>${p.points[lang].map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
     </div>`).join('');
-  return `<!DOCTYPE html><html lang="${lang === 'pt' ? 'pt-BR' : 'en'}"><head><meta charset="utf-8"><style>${atsCss}</style></head><body>
+  return `<!DOCTYPE html><html lang="${lang === 'pt' ? 'pt-BR' : 'en'}"><head><meta charset="utf-8"><title>${esc(d.identity.name)} · ${esc(d.documentTitles.ats[lang])}</title><style>${atsCss}</style></head><body>
 <div class="page">
   <h1>${esc(d.identity.name)}</h1>
   <div class="role">${esc(t(d.identity.role))}</div>
