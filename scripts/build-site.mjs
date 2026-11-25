@@ -14,5 +14,3 @@ for(const id of ids){
  writeFileSync(join(output,'assets','og',id+'.png'),png.asPng());
 }
 console.log('Build estático: 14 páginas e 6 imagens OG de 1200 × 630.');
-
-await import('./build-resume-en.mjs');
