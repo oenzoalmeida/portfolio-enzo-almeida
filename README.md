@@ -1,39 +1,30 @@
 # Portfólio de Enzo Almeida
 
-Este repositório reúne o código do meu portfólio profissional. O site usa HTML, CSS e JavaScript em um único arquivo e pode ser executado sem instalar dependências.
+Site de apresentação profissional de Enzo Almeida, desenvolvedor de software júnior na Zé Registra e estudante de Ciência da Computação. Contém seis estudos de caso de projetos pessoais, páginas em português e inglês, CSS e JavaScript compartilhados, capturas locais e currículos nos dois idiomas.
 
-## Site publicado
+## Desenvolvimento
 
-- **Portfólio:** https://portfolio-enzo-almeida.vercel.app
-- **Hospedagem:** Vercel, projeto `portfolio-enzo-almeida` na equipe `tech-lead1`.
-- O site foi publicado por envio de arquivos à Vercel. Os ambientes de preview exigem autenticação e o projeto **ainda não está conectado ao GitHub para deploy automático**.
+Requer Node.js 22 e Python para os testes de navegador.
 
-## Como abrir
-
-Abra `index.html` no navegador ou execute um servidor estático local:
-
-```bash
-python -m http.server 8000
+```sh
+npm install
+npm run build
+npm run validate
+python -m http.server 8000 --directory dist
 ```
 
-Depois, visite `http://localhost:8000`.
+Acesse http://localhost:8000. O build gera as seis imagens Open Graph em PNG a partir das fontes SVG em `assets/og/` e copia o site para `dist/`. O site entregue ao navegador continua sem dependências JavaScript externas.
 
-## Conteúdo
+Testes: `npx playwright install chromium` e `npm test`. O CI testa desktop e mobile, acessibilidade, rotas, imagens, currículo e orçamento de transferência. A verificação de demonstrações externas gera `demo-report.json` separadamente; uma indisponibilidade externa não reprova o portfólio.
 
-- Apresentação profissional, experiência e formação
-- Projetos e estudos de caso com imagens documentais
-- Links para repositórios e demonstrações
-- Layout responsivo e navegação com filtros
+## Publicação
 
-## Considerações importantes
+Produção: https://portfolio-enzo-almeida.vercel.app/
 
-- As imagens dos projetos são carregadas de `raw.githubusercontent.com`, exigindo conexão com a internet.
-- As demonstrações externas podem ter restrições de disponibilidade ou exigir login.
-- O domínio público utiliza a Vercel, não o GitHub Pages.
-- Os estudos de caso não incluem resultados quantitativos sem evidências.
+A configuração versionada da Vercel aponta para `dist/`. A versão anterior foi publicada manualmente; confira a integração e as permissões de preview antes de publicar. Links antigos `/#estudo-<projeto>` encaminham para páginas individuais quando JavaScript está disponível.
 
-## Contato
+PenteFino é privado e sua capa é ilustrativa, não uma captura do sistema.
 
-[GitHub](https://github.com/oenzoalmeida) · [LinkedIn](https://www.linkedin.com/in/enzolara/)
+## Diretriz editorial
 
-A versão publicada mantém a estrutura original em HTML, CSS e JavaScript.
+O portfólio documenta a atuação profissional atual, a formação e os projetos pessoais do autor. Em ambos os idiomas, preserve o vínculo atual com a Zé Registra, diferencie projetos pessoais e experiências independentes da atividade na empresa e evite linguagem que sinalize busca de emprego, disponibilidade para contratação ou intenção de mudança profissional. Os canais de contato servem à apresentação profissional e à troca de experiências. Preserve fatos verificáveis, sem exagerar senioridade ou atribuir projetos pessoais à empresa.

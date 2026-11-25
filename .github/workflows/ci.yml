@@ -1,20 +1,47 @@
 name: Validar portfólio estático
-
 on:
   push:
     branches: [main]
   pull_request:
-
 permissions:
   contents: read
-
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verificar HTML, navegação e scripts
-        run: node scripts/validate-site.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npm audit --omit=dev --audit-level=high
+      - run: npm run build
+      - run: npm run validate
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-audit
+          path: test-results/
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: static-site
+          path: dist/
+  demo-links:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/check-demos.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: demo-link-report
+          path: demo-report.json
