@@ -3,6 +3,10 @@ on:
   pull_request:
     paths:
       - '.github/workflows/lighthouse.yml'
+      - 'index.html'
+      - 'en/**'
+      - 'projetos/**'
+      - 'assets/**'
 permissions:
   contents: read
 jobs:

@@ -1,7 +1,7 @@
 name: Validar portfólio estático
 on:
   push:
-    branches: [main]
+    branches: [main, 'feat/portfolio-expansao-projetos-20261125']
   pull_request:
 permissions:
   contents: read
