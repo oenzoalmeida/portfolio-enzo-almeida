@@ -26,3 +26,8 @@
 @media(min-width:901px){.hero{grid-template-columns:minmax(0,1fr) 340px;gap:56px}.hero>div:first-child{max-width:none}}
 @media(min-width:700px) and (max-width:900px){.hero{grid-template-columns:minmax(0,1fr) 250px;gap:36px;align-items:center}.hero-photo{max-width:250px}}@media(max-width:699px){.hero-photo{order:-1;justify-self:start;max-width:220px}}
 @media(max-width:680px){.hero-photo{max-width:176px;border-radius:16px}}
+
+.project-cover-link{display:block;color:inherit;text-decoration:none}.project-cover-link:focus-visible{outline:2px solid #bbccff;outline-offset:-3px;border-radius:8px}
+
+/* Long project names must wrap on narrow screens. */
+.case .case-hero h1{overflow-wrap:anywhere}.project-cover-link{min-width:0}
