@@ -48,3 +48,49 @@
 .uniform-cover-heading span,.uniform-cover-heading small{display:block!important}
 
 .uniform-cover-heading{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}.project-cover.uniform-cover{position:relative}
+
+/* Visual enhancement preview: native CSS, no runtime dependencies. */
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 75% 30%,#5369b42b,transparent 58%),radial-gradient(ellipse at 18% 70%,#3d9d8b19,transparent 55%);background-size:140% 140%;animation:portfolio-aurora 12s ease-in-out infinite alternate}
+@keyframes portfolio-aurora{from{background-position:0% 20%}to{background-position:100% 80%}}
+.hero .role{background:linear-gradient(105deg,#b8c7ff,#9de7d3,#b8c7ff);background-size:200% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:portfolio-shine 8s linear infinite}
+@keyframes portfolio-shine{to{background-position:200% center}}
+.hero-photo{box-shadow:0 18px 60px #0007,0 0 38px #9fb5ff20}
+.tile,.skill{transition:border-color .25s,box-shadow .25s}
+.tile:focus-within,.skill:focus-within{border-color:var(--blue);box-shadow:0 0 24px #9fb5ff18}
+.timeline{border-image:linear-gradient(var(--mint),#3f536f) 1}
+.contact{background-image:radial-gradient(ellipse at 95% 0,#34567a55,transparent 65%),linear-gradient(#9fb5ff09 1px,transparent 1px),linear-gradient(90deg,#9fb5ff09 1px,transparent 1px);background-size:auto,24px 24px,24px 24px}
+@media(hover:hover) and (pointer:fine){
+.tile:hover,.skill:hover{border-color:#8398d4;box-shadow:0 8px 28px #0005,0 0 20px #9fb5ff15}
+.project-cover-link .uniform-cover-media{transition:transform .3s ease}
+.project-cover-link:hover .uniform-cover-media{transform:scale(1.025)}
+.btn.main:hover{box-shadow:0 0 24px #9fb5ff40}
+}
+@media(prefers-reduced-motion:reduce){.hero::before,.hero .role{animation:none!important}.project-cover-link:hover .uniform-cover-media,.btn:hover{transform:none}}
+@media(forced-colors:active){.hero .role{background:none;color:CanvasText}}
+
+/* #221 efeitos: CSS e JavaScript nativos, sem dependências, desligados com prefers-reduced-motion. */
+@property --beam-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+@keyframes portfolio-beam{to{--beam-a:360deg}}
+.hero-photo,.contact,.hero .btn.main{position:relative}
+.hero-photo::after,.contact::after,.hero .btn.main::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;background:conic-gradient(from var(--beam-a),transparent 0 78%,#9de7d3 90%,#c5d0ff 98%,transparent 100%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);animation:portfolio-beam 7s linear infinite}
+.tile,.skill{position:relative}
+.tile::after,.skill::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),#9fb5ff1f,transparent 70%)}
+.contact{overflow:hidden;isolation:isolate}
+.contact::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .3s;background-image:linear-gradient(#9fb5ff3d 1px,transparent 1px),linear-gradient(90deg,#9fb5ff3d 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:radial-gradient(180px circle at var(--mx,50%) var(--my,50%),#000,transparent);mask-image:radial-gradient(180px circle at var(--mx,50%) var(--my,50%),#000,transparent)}
+.timeline{position:relative;border-left-color:#2a3850}
+.timeline::after{content:"";position:absolute;left:-2px;top:0;width:3px;border-radius:3px;height:calc(var(--p,0) * 100%);background:linear-gradient(#9de7d3,#9fb5ff);box-shadow:0 0 14px #9de7d3aa;pointer-events:none}
+.btn,.tilelinks a,.navlinks a{transition:transform .2s,background .2s,box-shadow .25s,color .2s}
+.btn.main{translate:var(--tx,0) var(--ty,0)}
+.btn:focus-visible,.tilelinks a:focus-visible{box-shadow:0 0 0 3px #9fb5ff66}
+@media(hover:hover) and (pointer:fine){
+.tile:hover::after,.skill:hover::after,.contact:hover::before{opacity:1}
+.project-cover-link{perspective:900px}
+.project-cover-link:hover .uniform-cover-media{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(1.03);transition:transform .12s ease-out}
+}
+@media(prefers-reduced-motion:reduce){.hero-photo::after,.contact::after,.hero .btn.main::after{animation:none;background:none;-webkit-mask:none;mask:none;border:1px solid #9de7d355;padding:0}.timeline::after{height:100%}.btn.main{translate:none}.project-cover-link:hover .uniform-cover-media{transform:none}.tile::after,.skill::after,.contact::before{transition:none}}
+@media(forced-colors:active){.hero-photo::after,.contact::after,.hero .btn.main::after,.timeline::after,.tile::after,.skill::after,.contact::before{display:none}}
+.hero::before{-webkit-mask-image:radial-gradient(ellipse at 55% 45%,#000 35%,transparent 78%);mask-image:radial-gradient(ellipse at 55% 45%,#000 35%,transparent 78%)}
+.btn.main{transition:transform .2s,background .2s,box-shadow .25s,translate .22s ease-out}
+@media(min-width:700px) and (max-width:767px){.menu{display:block}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;background:#0e1725;border-bottom:1px solid #44516a;padding:16px 22px 24px;flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:11px 0;font-size:14px;min-height:44px}.navlinks .outline{padding:11px 14px;margin-top:8px;text-align:center}}
+@media(min-width:768px) and (max-width:900px){.nav{gap:12px}.navlinks{gap:11px}.navlinks a{white-space:nowrap;font-size:12px}.navlinks .outline{padding:8px 9px}}
