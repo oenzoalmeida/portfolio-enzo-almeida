@@ -154,10 +154,10 @@ mountrack: {
   rules: ['Só entram dados digitados pelo usuário. O sistema não calcula nem sugere doses.','Consentimento de dados de saúde separado do aceite dos Termos, com data e versão registradas no servidor. Público adulto (18+).','O painel administrativo mostra cadastro e status, sem rota para registros de saúde.'],
   challenges: [['Limitar o acesso do administrador a dados de saúde.','Painel separado, sem rotas para registros de saúde.'],['Funcionar como PWA sem frameworks.','HTML, CSS e JavaScript puros com service worker que guarda a interface em cache.'],['Ser claro sobre o que a proteção cobre.','O README informa que o isolamento é lógico e que não há criptografia de coluna em repouso.']],
   security: ['Senhas com bcrypt (custo 12) e sessão por cookie HttpOnly.','Consultas parametrizadas e limite de tentativas por IP na autenticação.','Sem analytics e sem cookies além do de sessão.'],
-  tests: ['O CI verifica a sintaxe do JavaScript, os arquivos essenciais do PWA e o backend. Não há suíte funcional completa documentada.'],
+  tests: ['Testes de backend com node --test: troca obrigatória de senha, revogação de conta, versão dos dados, configuração do banco, consentimento de privacidade e mesma origem. Também há testes de cache de autenticação e de entrada decimal. Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria.'],
   learn: ['Privacidade começa pelo que o sistema decide não expor, inclusive para o administrador.','Documentar o que a segurança não cobre é parte do trabalho.'],
   status: 'Projeto de portfólio, com frontend no Firebase Hosting, API na Vercel e PostgreSQL no Neon. Login e sincronização exigem conexão. Não substitui acompanhamento médico.',
-  avail: ['Privado','Não divulgada','Disponível','Publicado']
+  avail: ['Privado','Disponível: mountrack-backend.vercel.app','Disponível','Publicado']
  },
  en: {
   ctx: 'People who log weight, measurements and symptoms need a tool that treats sensitive data with care. MounTrack is a personal log, with no analysis or recommendations.',
@@ -165,10 +165,10 @@ mountrack: {
   rules: ['Only data typed by the user goes in. The system does not calculate or suggest doses.','Health-data consent is separate from accepting the Terms, with date and version recorded on the server. Adults only (18+).','The admin panel shows registration and status, with no route to health records.'],
   challenges: [['Limiting the administrator\'s access to health data.','A separate panel with no routes to health records.'],['Working as a PWA without frameworks.','Plain HTML, CSS and JavaScript with a service worker that caches the interface.'],['Being clear about what the protection covers.','The README states that isolation is logical and that there is no column-level encryption at rest.']],
   security: ['bcrypt passwords (cost 12) and HttpOnly cookie sessions.','Parameterized queries and per-IP attempt limits on authentication.','No analytics and no cookies beyond the session cookie.'],
-  tests: ['CI checks JavaScript syntax, essential PWA files and the backend. No full functional suite is documented.'],
+  tests: ['Backend tests with node --test: forced password change, account revocation, data versioning, database configuration, privacy consent and same-origin checks. There are also tests for the authentication cache and decimal input. Existence confirmed from the repository file listing; the tests were not run in this audit.'],
   learn: ['Privacy starts with what the system chooses not to expose, including to the administrator.','Documenting what the security does not cover is part of the work.'],
   status: 'Portfolio project, with the frontend on Firebase Hosting, the API on Vercel and PostgreSQL on Neon. Login and sync need a connection. It does not replace medical care.',
-  avail: ['Private','Not published','Available','Published']
+  avail: ['Private','Available: mountrack-backend.vercel.app','Available','Published']
  }
 },
 'dona-joana': {
@@ -178,10 +178,10 @@ mountrack: {
   rules: ['Pix gerado pela integração com o Asaas no checkout.','Dados do negócio só saem da API com autenticação.'],
   challenges: [['Usar a mesma base no celular e na web.','App Expo e React Native com versão web publicada.'],['Manter segredos fora do código.','Credenciais do Asaas, JWT, Resend e MongoDB lidas apenas de variáveis de ambiente.']],
   security: ['Nenhum segredo é versionado.','A API não expõe dados do negócio sem autenticação.'],
-  tests: ['Este estudo não afirma cobertura de testes automatizados, porque o README não a documenta.'],
+  tests: ['Suíte pytest no backend com 18 arquivos test_*.py: pagamento Pix com mock do Asaas, segurança, CORS, backup, área de entrega, pedidos, cardápio e painel. Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria.'],
   learn: ['Pagamento por Pix dinâmico exige tratar o ciclo do pedido, não só gerar o código.','Documentar o produto (PRD e pacotes) ajudou a manter o escopo do app.'],
   status: 'Projeto complementar com código privado: aplicação Expo e React Native, API FastAPI e MongoDB. Os dados do negócio não são divulgados.',
-  avail: ['Privado','Não divulgada','Disponível','Publicado']
+  avail: ['Privado','Disponível: dona-joana-marmitaria-web.vercel.app','Disponível','Publicado']
  },
  en: {
   ctx: 'A local lunchbox shop needed to take orders and charge by Pix without checking receipts by hand. The app covers catalog, cart, dynamic Pix checkout and order tracking.',
@@ -189,10 +189,10 @@ mountrack: {
   rules: ['Pix is generated through the Asaas integration at checkout.','Business data leaves the API only with authentication.'],
   challenges: [['Using one codebase on mobile and web.','Expo and React Native app with a published web version.'],['Keeping secrets out of the code.','Asaas, JWT, Resend and MongoDB credentials are read only from environment variables.']],
   security: ['No secret is versioned.','The API does not expose business data without authentication.'],
-  tests: ['This case study does not claim automated test coverage, because the README does not document it.'],
+  tests: ['Backend pytest suite with 18 test_*.py files: Pix payment against an Asaas mock, security, CORS, backup, delivery area, orders, menu and dashboard. Existence confirmed from the repository file listing; the tests were not run in this audit.'],
   learn: ['Dynamic Pix payment requires handling the order lifecycle, not just generating the code.','Product documentation (PRD and packages) helped keep the app\'s scope.'],
   status: 'Complementary project with private code: Expo and React Native app, FastAPI API and MongoDB. Business data is not disclosed.',
-  avail: ['Private','Not published','Available','Published']
+  avail: ['Private','Available: dona-joana-marmitaria-web.vercel.app','Available','Published']
  }
 },
 cofre: {
@@ -202,7 +202,7 @@ cofre: {
   rules: ['A primeira conta só vira administradora se o e-mail bater com INITIAL_ADMIN_EMAIL.','Credenciais privadas ficam com o dono e os administradores. Compartilhamento respeita concessões individuais.','Senha temporária bloqueia o cofre até a troca confirmada.','O último administrador não pode ser removido nem rebaixado.'],
   challenges: [['Nunca guardar segredo em texto puro.','Cifra AES-256-GCM no servidor, com chave mestra independente do segredo de autenticação e versionada (VAULT_MASTER_KEY_Vn).'],['Auditar sem perder consistência.','A alteração e o evento de auditoria são gravados na mesma transação.'],['Proteger login e conta.','Rate limiting em /sign-in/email, MFA/TOTP opcional com códigos de recuperação e revogação de sessões ao trocar senha.']],
   security: ['A chave mestra nunca vai ao frontend, a logs, URLs ou commits.','Cadastro público fechado, com usuários provisionados internamente.','Visualização e cópia de segredos geram trilha de auditoria.'],
-  tests: ['Este estudo não afirma cobertura de testes automatizados, porque o README não a documenta.'],
+  tests: ['Cinco arquivos de teste em scripts/: backup do banco, verificação de marca, veredito do smoke de navegador, invariante de autenticação e plugin PWA. Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria. Este estudo não afirma cobertura total.'],
   learn: ['Segurança de cofre é mais política de acesso e auditoria do que criptografia isolada.','Transação única para dado e auditoria evita trilha incompleta.'],
   status: 'Uso pessoal, com código privado e sem cadastro público. Esta apresentação não constitui certificação nem auditoria independente de segurança. Os registros do cofre nunca aparecem aqui.',
   avail: ['Privado','Não divulgada','Disponível','Em uso pessoal']
@@ -213,7 +213,7 @@ cofre: {
   rules: ['The first account becomes administrator only if the e-mail matches INITIAL_ADMIN_EMAIL.','Private credentials stay with the owner and administrators. Sharing respects individual grants.','A temporary password blocks the vault until a confirmed change.','The last administrator cannot be removed or demoted.'],
   challenges: [['Never storing a secret in plain text.','AES-256-GCM encryption on the server, with a master key independent of the auth secret and versioned (VAULT_MASTER_KEY_Vn).'],['Auditing without losing consistency.','The change and its audit event are written in the same transaction.'],['Protecting login and account.','Rate limiting on /sign-in/email, optional MFA/TOTP with recovery codes, and session revocation on password change.']],
   security: ['The master key never reaches the frontend, logs, URLs or commits.','Public sign-up is closed, with users provisioned internally.','Viewing and copying secrets produces an audit trail.'],
-  tests: ['This case study does not claim automated test coverage, because the README does not document it.'],
+  tests: ['Five test files in scripts/: database backup, brand check, browser smoke verdict, authentication invariant and PWA plugin. Existence confirmed from the repository file listing; the tests were not run in this audit. This case study does not claim full coverage.'],
   learn: ['Vault security is more about access policy and auditing than isolated encryption.','A single transaction for data and audit avoids an incomplete trail.'],
   status: 'Personal use, with private code and no public sign-up. This presentation is not a certification or independent security audit. Vault records never appear here.',
   avail: ['Private','Not published','Available','Personal use']
@@ -250,7 +250,7 @@ devjourney: {
   rules: ['Cinco missões com desafios em etapas e pontuação em XP.','O laboratório usa comandos simulados. Nada executa no sistema nem roda Python ou SQL real.'],
   challenges: [['Ensinar linha de comando sem risco.','Terminal simulado, que valida respostas sem executar comandos.'],['Manter o protótipo simples.','Sem dependências externas, backend ou conta: progresso salvo em localStorage.']],
   security: ['Nenhum dado sai do navegador: o progresso fica no armazenamento local.'],
-  tests: ['Este estudo não afirma cobertura de testes automatizados. O README lista como pendência a revisão funcional e de acessibilidade em navegador.'],
+  tests: ['Cinco scripts de teste em Node (tests, tests-code, tests-languages, tests-selfhost e audit-tests). Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria. O README lista a revisão funcional e de acessibilidade no navegador como pendência.'],
   learn: ['Simular o ambiente permite ensinar sem expor o usuário a execução arbitrária.'],
   status: 'Protótipo v0.5 em desenvolvimento, com código privado. Sem sincronização entre dispositivos. Evoluir para execução real exigiria ambientes isolados.',
   avail: ['Privado','Não divulgada','Disponível','Protótipo em desenvolvimento']
@@ -261,7 +261,7 @@ devjourney: {
   rules: ['Five missions with step-by-step challenges and XP scoring.','The lab uses simulated commands. Nothing runs on the system and no real Python or SQL executes.'],
   challenges: [['Teaching the command line without risk.','A simulated terminal that checks answers without executing commands.'],['Keeping the prototype simple.','No external dependencies, backend or account: progress is saved in localStorage.']],
   security: ['No data leaves the browser: progress stays in local storage.'],
-  tests: ['This case study does not claim automated test coverage. The README lists a functional and accessibility review in the browser as pending.'],
+  tests: ['Five Node test scripts (tests, tests-code, tests-languages, tests-selfhost and audit-tests). Existence confirmed from the repository file listing; the tests were not run in this audit. The README lists a functional and accessibility review in the browser as pending.'],
   learn: ['Simulating the environment lets you teach without exposing users to arbitrary execution.'],
   status: 'Prototype v0.5 in development, with private code. No sync across devices. Moving to real execution would require isolated environments.',
   avail: ['Private','Not published','Available','Prototype in development']
