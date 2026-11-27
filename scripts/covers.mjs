@@ -3,6 +3,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { Resvg } from '@resvg/resvg-js';
+import { indexedPng } from './png-indexed.mjs';
 export const SRC = { pentefino: 'pentefino/interface.png', queueflow: 'queueflow/02-dashboard.png', conferevision: 'conferevision/entrada.png', eventpass: 'eventpass/area-publica.png', pratoja: 'pratoja/inicio.png', autociclo: 'autociclo/inicio.png', mountrack: 'mountrack/interface.png', 'dona-joana': 'dona-joana/interface.png', taskflow: 'taskflow/login.png', 'sistema-estoque': 'sistema-estoque/painel.png', 'consumo-energia': 'consumo-energia/simulador.png', 'calculadora-python': 'calculadora-python/calculadora-web.png' };
 const ACC = { pentefino: '#a78bfa', queueflow: '#34d399', conferevision: '#22d3ee', eventpass: '#8b5cf6', pratoja: '#fb923c', autociclo: '#f97316', mountrack: '#34d399', 'dona-joana': '#a3e635', cofre: '#60a5fa', taskflow: '#f87171', devjourney: '#fbbf24', 'sistema-estoque': '#facc15', 'consumo-energia': '#bef264', 'calculadora-python': '#d6c9a8' };
 export const NAMES = { pentefino: 'PenteFino', queueflow: 'QueueFlow', conferevision: 'ConfereVision', eventpass: 'EventPass', pratoja: 'PratoJá', autociclo: 'AutoCiclo', mountrack: 'MounTrack', 'dona-joana': 'Dona Joana Marmitaria', cofre: 'Cofre', taskflow: 'TaskFlow', devjourney: 'DevJourney', 'sistema-estoque': 'Sistema de Estoque', 'consumo-energia': 'Consumo de Energia', 'calculadora-python': 'Calculadora Python' };
@@ -63,7 +64,7 @@ export function renderCovers(out) {
   for (const id of Object.keys(NAMES)) for (const lang of ['pt', 'en']) {
     const png = new Resvg(coverSvg(id, lang, cardData(html[lang], id)), { fitTo: { mode: 'width', value: 1200 }, font: { loadSystemFonts: true, defaultFontFamily: 'DejaVu Sans' } }).render();
     if (png.width !== 1200 || png.height !== 630) throw Error('Dimensão da capa inválida: ' + id);
-    writeFileSync(join(out, 'assets', 'covers', id + (lang === 'en' ? '-en' : '') + '.png'), png.asPng());
+    writeFileSync(join(out, 'assets', 'covers', id + (lang === 'en' ? '-en' : '') + '.png'), indexedPng(png.pixels, 1200, 630));
   }
   return Object.keys(NAMES).length * 2;
 }
