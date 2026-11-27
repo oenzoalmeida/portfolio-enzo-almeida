@@ -18,7 +18,6 @@ export function applyEnrichment(root = '.') {
   const f = root + '/' + L[lang].dir + '/' + id + '/index.html';
   let s = readFileSync(f, 'utf8');
   s = s.replace(/<!--extra-->[\s\S]*?<!--\/extra-->/, '');
-  if (id === 'mountrack' || id === 'dona-joana') s = s.replace('Código-fonte privado. Esta página não disponibiliza demonstração pública.', 'Código-fonte privado. A aplicação publicada está indicada em Disponibilidade.').replace('Private source code. No public demonstration is offered on this page.', 'Private source code. The published application is listed under Availability.');
   const a = '<h2>' + L[lang].anchor + '</h2>';
   if (!s.includes(a)) throw Error('âncora ausente: ' + f);
   s = s.replace(a, block(id, lang) + a);
