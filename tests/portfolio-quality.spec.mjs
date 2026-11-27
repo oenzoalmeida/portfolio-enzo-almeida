@@ -13,6 +13,6 @@ for(const prefix of ['', '/en']){
   await expect(covers.locator('img')).toHaveCount(12);await expect(covers.locator('.cover-illustration')).toHaveCount(2);
  });
  test('case study structure '+prefix,async({page})=>{
-  for(const id of ids){await page.goto(prefix+'/projetos/'+id+'/');const article=page.locator('main article');await expect(article.locator('.architecture-flow')).toHaveCount(1);await expect(article.locator('h2')).not.toHaveCount(0);expect(await article.locator('h2').count()).toBeGreaterThanOrEqual(6);await expect(article.locator('.evidence')).toHaveCount(1);await expect(article.getByRole('heading',{name:prefix?'Main features':'Principais funcionalidades',exact:true})).toHaveCount(1);if(privateIds.includes(id))await expect(page.locator('main a[href*="github.com/oenzoalmeida/"]')).toHaveCount(0);}
+  for(const id of ids){await page.goto(prefix+'/projetos/'+id+'/');const article=page.locator('main article');await expect(article.locator('.architecture-flow')).toHaveCount(2);await expect(article.locator('h2')).not.toHaveCount(0);expect(await article.locator('h2').count()).toBeGreaterThanOrEqual(6);await expect(article.locator('.evidence')).toHaveCount(1);await expect(article.getByRole('heading',{name:prefix?'Main features':'Principais funcionalidades',exact:true})).toHaveCount(1);if(privateIds.includes(id))await expect(page.locator('main a[href*="github.com/oenzoalmeida/"]')).toHaveCount(0);}
  });
 }
