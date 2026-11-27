@@ -5,7 +5,7 @@ const ids=["queueflow","pratoja","conferevision","autociclo","eventpass","pentef
 const output='dist';
 rmSync(output,{recursive:true,force:true});
 mkdirSync(output,{recursive:true});
-for(const path of ['index.html','en','assets','projetos','robots.txt','sitemap.xml','og-image.png']) cpSync(path,join(output,path),{recursive:true});
+for(const path of ['index.html','en','assets','projetos','acesso','robots.txt','sitemap.xml','og-image.png']) cpSync(path,join(output,path),{recursive:true});
 for(const id of ids){
  const svg=readFileSync(join('assets','og',id+'.svg'),'utf8');
  const renderer=new Resvg(svg,{fitTo:{mode:'width',value:1200},font:{loadSystemFonts:true,defaultFontFamily:'DejaVu Sans'}});

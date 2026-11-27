@@ -20,3 +20,16 @@ for(const [page,docs] of [['index.html',['perfil-profissional-enzo-almeida.pdf',
 // Positioning regression check: inspect public copy in both languages.
 for (const path of paths) { const html=readFileSync(path,'utf8'); assert.doesNotMatch(html, /oportunidades profissionais|career opportunities|open to work|disponível para contratação|buscando emprego|seeking (?:a job|new opportunities)/i, path); }
 for (const path of ['index.html','en/index.html']) { const html=readFileSync(path,'utf8'); assert.match(html,/Zé Registra/); assert.match(html,/"worksFor"\s*:/); }
+
+// Páginas compactas de acesso: /acesso/<slug>/ (pt-BR) e /en/acesso/<slug>/ (en).
+const acesso=['pentefino','queueflow','conferevision','eventpass','pratoja','autociclo'];
+for(const id of acesso){for(const en of [false,true]){const p=(en?'en/':'')+'acesso/'+id+'/index.html';const html=readFileSync(p,'utf8');
+ assert.ok(html.includes('lang="'+(en?'en':'pt-BR')+'"'),p);
+ assert.ok(html.includes('rel="canonical" href="https://portfolio-enzo-almeida.vercel.app/'+p.replace('index.html','')+'"'),p+' canonical');
+ assert.ok(html.includes('rel="alternate" hreflang="pt-BR"')&&html.includes('rel="alternate" hreflang="en"'),p+' hreflang');
+ const og=html.match(/property="og:image" content="https:\/\/portfolio-enzo-almeida\.vercel\.app([^"]+)"/);assert.ok(og,p+' og:image');assert.ok(existsSync('.'+og[1]),og[1]);
+ assert.ok(html.includes((en?'/en':'')+'/projetos/'+id+'/'),p+' sem link de detalhes');
+ assert.doesNotMatch(html,/<script/i,p+' nao deve ter script');}
+ const capa=readFileSync('acesso/'+id+'/capa.png');assert.equal(capa.subarray(0,8).toString('hex'),'89504e470d0a1a0a');assert.equal(capa.readUInt32BE(16),1200);assert.equal(capa.readUInt32BE(20),630);}
+assert.ok(!existsSync('acesso/index.html'),'nao deve existir pagina raiz de acesso');
+console.log('OK: 12 páginas de acesso compactas (6 projetos, PT+EN).');
