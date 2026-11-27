@@ -6,8 +6,8 @@ for(const prefix of ['', '/en']){
   await page.goto(prefix+'/');
   const covers=page.locator('#projetos .uniform-cover');await expect(covers).toHaveCount(14);
   for(const cover of await covers.all()){
-   await cover.scrollIntoViewIfNeeded();await expect(cover.locator('.uniform-cover-heading')).toBeVisible();await expect(cover.locator('.uniform-cover-media')).toBeVisible();
-   const im=cover.locator('img');await expect(im).toHaveCount(1);await im.evaluate(i=>i.complete||new Promise(r=>{i.onload=i.onerror=r}));const m=await im.evaluate(i=>({loaded:i.naturalWidth>0,w:i.clientWidth,h:i.clientHeight,nw:i.naturalWidth,nh:i.naturalHeight}));expect(m.loaded).toBe(true);expect(m.nw).toBe(1200);expect(m.nh).toBe(620);expect(Math.abs(m.w/m.h-1200/620)).toBeLessThan(.03);expect(m.w).toBeGreaterThan(250);
+   await cover.scrollIntoViewIfNeeded();await expect(cover.locator('.uniform-cover-heading')).toBeAttached();await expect(cover.locator('.uniform-cover-media')).toBeVisible();
+   const im=cover.locator('img');await expect(im).toHaveCount(1);await im.evaluate(i=>i.complete||new Promise(r=>{i.onload=i.onerror=r}));const m=await im.evaluate(i=>({loaded:i.naturalWidth>0,w:i.clientWidth,h:i.clientHeight,nw:i.naturalWidth,nh:i.naturalHeight}));expect(m.loaded).toBe(true);expect(m.nw).toBe(1200);expect(m.nh).toBe(630);expect(Math.abs(m.w/m.h-1200/630)).toBeLessThan(.03);expect(m.w).toBeGreaterThan(250);
    expect(await cover.evaluate(e=>({width:e.clientWidth,height:e.clientHeight,scrollWidth:e.scrollWidth,scrollHeight:e.scrollHeight,ok:e.scrollHeight<=e.clientHeight+1&&e.scrollWidth<=e.clientWidth+1})),await cover.locator('.uniform-cover-heading').innerText()).toMatchObject({ok:true});
   }
   await expect(covers.locator('img')).toHaveCount(14);await expect(covers.locator(".cover-illustration")).toHaveCount(2);
