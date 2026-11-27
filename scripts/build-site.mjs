@@ -6,6 +6,8 @@ const output='dist';
 rmSync(output,{recursive:true,force:true});
 mkdirSync(output,{recursive:true});
 for(const path of ['index.html','en','assets','projetos','acesso','robots.txt','sitemap.xml','og-image.png']) cpSync(path,join(output,path),{recursive:true});
+const enriched=(await import('./enrich-cases.mjs')).applyEnrichment(output);
+console.log('Estudos de caso enriquecidos:',enriched);
 for(const id of ids){
  const svg=readFileSync(join('assets','og',id+'.svg'),'utf8');
  const renderer=new Resvg(svg,{fitTo:{mode:'width',value:1200},font:{loadSystemFonts:true,defaultFontFamily:'DejaVu Sans'}});
