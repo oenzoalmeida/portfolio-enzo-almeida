@@ -22,3 +22,42 @@ for(const id of ids){
   }
  });
 }
+
+const applicationLinks = [
+  [
+    "queueflow",
+    "https://queueflow-backend-oe.azurewebsites.net",
+    "Acessar aplicação",
+    "Open application",
+    "Acesso com login",
+    "Sign-in required"
+  ],
+  [
+    "conferevision",
+    "https://conferevision.vercel.app",
+    "Acessar aplicação",
+    "Open application",
+    "Acesso com login",
+    "Sign-in required"
+  ],
+  [
+    "autociclo",
+    "https://autociclo.vercel.app",
+    "Conhecer o projeto",
+    "Explore the project",
+    "Página de apresentação",
+    "Public overview"
+  ]
+];
+for (const [id, href, ptLink, enLink, ptAccess, enAccess] of applicationLinks) {
+ test('rótulos de acesso PT/EN: ' + id, async ({page}) => {
+  for (const [prefix, label, field, access] of [['',ptLink,'Aplicação',ptAccess],['/en',enLink,'Application',enAccess]]) {
+   await page.goto(prefix + '/');
+   await expect(page.locator('#estudo-' + id).getByRole('link', {name: label + ' ↗', exact: true})).toHaveAttribute('href', href);
+   await page.goto(prefix + '/projetos/' + id + '/');
+   await expect(page.getByRole('link', {name: label + ' ↗', exact: true})).toHaveAttribute('href', href);
+   const availability = page.locator('dl.availability > div').filter({has: page.getByText(field, {exact: true})});
+   await expect(availability.locator('dd')).toHaveText(access);
+  }
+ });
+}
