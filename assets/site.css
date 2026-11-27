@@ -37,3 +37,23 @@
 
 /* Explicit sizing prevents intrinsic SVG/image dimensions from expanding cover tracks. */
 .project-cover.uniform-cover{grid-template-columns:minmax(0,1fr);grid-template-rows:36px minmax(0,1fr);min-width:0;min-height:0;position:relative;contain:layout paint}.uniform-cover-heading{overflow:hidden;justify-content:center}.uniform-cover-heading span,.uniform-cover-heading small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.uniform-cover-media{position:relative;display:block;min-height:0;min-width:0;width:100%;height:100%;overflow:hidden}.uniform-cover-media>img,.uniform-cover-media>.cover-illustration{position:absolute;inset:0;width:100%;height:100%;max-width:100%;max-height:100%}.cover-illustration{display:grid;grid-template-rows:minmax(0,1fr) 14px;justify-items:center;gap:2px;padding:4px}.cover-illustration svg{width:100%;height:100%;min-height:0;max-height:100%}.cover-illustration span{line-height:14px;white-space:nowrap}
+
+/* Visual enhancement preview: native CSS, no runtime dependencies. */
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 75% 30%,#5369b42b,transparent 58%),radial-gradient(ellipse at 18% 70%,#3d9d8b19,transparent 55%);background-size:140% 140%;animation:portfolio-aurora 12s ease-in-out infinite alternate}
+@keyframes portfolio-aurora{from{background-position:0% 20%}to{background-position:100% 80%}}
+.hero .role{background:linear-gradient(105deg,#b8c7ff,#9de7d3,#b8c7ff);background-size:200% auto;background-clip:text;-webkit-background-clip:text;color:transparent;animation:portfolio-shine 8s linear infinite}
+@keyframes portfolio-shine{to{background-position:200% center}}
+.hero-photo{box-shadow:0 18px 60px #0007,0 0 38px #9fb5ff20}
+.tile,.skill{transition:border-color .25s,box-shadow .25s}
+.tile:focus-within,.skill:focus-within{border-color:var(--blue);box-shadow:0 0 24px #9fb5ff18}
+.timeline{border-image:linear-gradient(var(--mint),#3f536f) 1}
+.contact{background-image:radial-gradient(ellipse at 95% 0,#34567a55,transparent 65%),linear-gradient(#9fb5ff09 1px,transparent 1px),linear-gradient(90deg,#9fb5ff09 1px,transparent 1px);background-size:auto,24px 24px,24px 24px}
+@media(hover:hover) and (pointer:fine){
+.tile:hover,.skill:hover{border-color:#8398d4;box-shadow:0 8px 28px #0005,0 0 20px #9fb5ff15}
+.project-cover-link .uniform-cover-media{transition:transform .3s ease}
+.project-cover-link:hover .uniform-cover-media{transform:scale(1.025)}
+.btn.main:hover{box-shadow:0 0 24px #9fb5ff40}
+}
+@media(prefers-reduced-motion:reduce){.hero::before,.hero .role{animation:none!important}.project-cover-link:hover .uniform-cover-media,.btn:hover{transform:none}}
+@media(forced-colors:active){.hero .role{background:none;color:CanvasText}}
