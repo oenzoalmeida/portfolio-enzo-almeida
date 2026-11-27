@@ -28,6 +28,7 @@ pentefino: {
  }
 },
 queueflow: {
+ appAccess: true,
  pt: {
   ctx: 'Em balcões de atendimento, o cliente espera sem saber quando será chamado e o atendente chama senhas em telas separadas. O QueueFlow reúne totem, guichê, painel e display numa fila que todos veem atualizada ao mesmo tempo.',
   flow: ['Totem emite a senha','API grava a senha na fila','Atendente chama no guichê','Evento STOMP por WebSocket','Display público atualiza'],
@@ -37,7 +38,7 @@ queueflow: {
   tests: ['Backend com testes de integração e da política de chamada, rodando com ./mvnw test no CI a cada push.','Frontend com Vitest e Testing Library (erros da API, rótulos de status e login). As capturas de tela do repositório saem da suíte E2E.'],
   learn: ['Tempo real pede um desenho de eventos, não só endpoints: definir quais telas ouvem quais eventos simplificou o resto.','Migrações Flyway e E2E tornam a demonstração reproduzível.'],
   status: 'Segundo o README (hospedagem não revalidada): publicada no Azure App Service com PostgreSQL gerenciado (Aiven). Os dados da demonstração podem ser redefinidos. O endereço antigo no Firebase Hosting apenas redireciona.',
-  avail: ['Público','Disponível','Disponível','Publicado']
+  avail: ['Público','Acesso com login','Disponível','Publicado']
  },
  en: {
   ctx: 'At service counters, customers wait without knowing when they will be called, and attendants call tickets from separate screens. QueueFlow joins kiosk, counter, dashboard and display into one queue that everyone sees updated at the same time.',
@@ -48,10 +49,11 @@ queueflow: {
   tests: ['Backend integration tests and ticket-calling policy tests, run with ./mvnw test in CI on every push.','Frontend tests with Vitest and Testing Library (API errors, status labels and login). The repository screenshots come from the E2E suite.'],
   learn: ['Real time calls for an event design, not just endpoints: deciding which screens listen to which events simplified the rest.','Flyway migrations and E2E tests make the demo reproducible.'],
   status: 'Per the README (hosting not re-verified): published on Azure App Service with managed PostgreSQL (Aiven). Demo data may be reset. The old Firebase Hosting address only redirects.',
-  avail: ['Public','Available','Available','Published']
+  avail: ['Public','Sign-in required','Available','Published']
  }
 },
 conferevision: {
+ appAccess: true,
  pt: {
   ctx: 'Conferir à mão se um kit tem todos os itens leva tempo e falha por esquecimento. O ConfereVision compara o que a foto ou o vídeo mostra com a composição esperada do kit.',
   flow: ['Cadastro do kit (item e quantidade)','Envio de foto ou vídeo','Detecção com YOLOX-s (OpenCV)','Comparação com o esperado','Faltas, excessos e histórico'],
@@ -61,7 +63,7 @@ conferevision: {
   tests: ['16 testes de aplicação e segurança (python manage.py test core) e testes de visão com fluxo geométrico, segundo o README.','Os exemplos do repositório são pontuais e não representam uma medida de precisão.'],
   learn: ['A parte difícil de visão computacional em produto é comunicar a incerteza ao usuário.','Separar o pipeline de detecção (vision.py, detector.py) da camada Django facilitou testar cada parte.'],
   status: 'Aplicação publicada e com endpoint de saúde. Não há validação de precisão para uso comercial. A detecção depende das classes reconhecidas pelo modelo.',
-  avail: ['Público','Disponível','Disponível','Publicado']
+  avail: ['Público','Acesso com login','Disponível','Publicado']
  },
  en: {
   ctx: 'Checking by hand whether a kit has every item takes time and fails through oversight. ConfereVision compares what a photo or video shows with the kit\'s expected composition.',
@@ -72,7 +74,7 @@ conferevision: {
   tests: ['16 application and security tests (python manage.py test core) and vision tests with a geometric flow, per the README.','The repository examples are spot checks and do not measure accuracy.'],
   learn: ['The hard part of computer vision in a product is communicating uncertainty to the user.','Separating the detection pipeline (vision.py, detector.py) from the Django layer made each part easier to test.'],
   status: 'Published, with a health endpoint. Accuracy has not been validated for commercial use. Detection depends on the classes the model recognizes.',
-  avail: ['Public','Available','Available','Published']
+  avail: ['Public','Sign-in required','Available','Published']
  }
 },
 eventpass: {
@@ -124,6 +126,7 @@ pratoja: {
  }
 },
 autociclo: {
+ appAccess: true,
  pt: {
   ctx: 'Manutenção de veículo costuma viver em notas soltas e na memória. O AutoCiclo organiza revisões, quilometragem, gastos e documentos como um prontuário por veículo.',
   flow: ['Cadastro do veículo','Quilometragem e manutenções','Alertas de vencimento','Histórico e gastos','Relatório imprimível'],
@@ -133,7 +136,7 @@ autociclo: {
   tests: ['Testes unitários com Vitest executados no CI. Os dados do aplicativo exigem conexão: não há modo offline.'],
   learn: ['Política de acesso no banco reduz o que o frontend precisa acertar.','Cálculo de datas tem casos de borda que merecem teste próprio.'],
   status: 'Segundo o README (hospedagem não revalidada): publicado em planos gratuitos (Vercel e Supabase). O primeiro acesso pode ser lento e os dados de demonstração podem ser removidos. PWA instalável.',
-  avail: ['Público','Disponível','Disponível','Publicado']
+  avail: ['Público','Página de apresentação','Disponível','Publicado']
  },
  en: {
   ctx: 'Vehicle maintenance usually lives in loose receipts and memory. AutoCiclo organizes services, mileage, expenses and documents as a record per vehicle.',
@@ -144,7 +147,7 @@ autociclo: {
   tests: ['Unit tests with Vitest run in CI. App data requires a connection: there is no offline mode.'],
   learn: ['Access policies in the database reduce what the frontend must get right.','Date arithmetic has edge cases that deserve their own tests.'],
   status: 'Per the README (hosting not re-verified): published on free plans (Vercel and Supabase). The first load may be slow and demo data may be removed. Installable PWA.',
-  avail: ['Public','Available','Available','Published']
+  avail: ['Public','Public overview','Available','Published']
  }
 },
 mountrack: {
