@@ -157,7 +157,7 @@ mountrack: {
   tests: ['Testes de backend com node --test: troca obrigatória de senha, revogação de conta, versão dos dados, configuração do banco, consentimento de privacidade e mesma origem. Também há testes de cache de autenticação e de entrada decimal. Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria.'],
   learn: ['Privacidade começa pelo que o sistema decide não expor, inclusive para o administrador.','Documentar o que a segurança não cobre é parte do trabalho.'],
   status: 'Projeto de portfólio, com frontend no Firebase Hosting, API na Vercel e PostgreSQL no Neon. Login e sincronização exigem conexão. Não substitui acompanhamento médico.',
-  avail: ['Privado','Disponível: mountrack-backend.vercel.app','Disponível','Publicado']
+  avail: ['Privado','Existe, divulgação pública não validada','Disponível','Publicado']
  },
  en: {
   ctx: 'People who log weight, measurements and symptoms need a tool that treats sensitive data with care. MounTrack is a personal log, with no analysis or recommendations.',
@@ -168,7 +168,7 @@ mountrack: {
   tests: ['Backend tests with node --test: forced password change, account revocation, data versioning, database configuration, privacy consent and same-origin checks. There are also tests for the authentication cache and decimal input. Existence confirmed from the repository file listing; the tests were not run in this audit.'],
   learn: ['Privacy starts with what the system chooses not to expose, including to the administrator.','Documenting what the security does not cover is part of the work.'],
   status: 'Portfolio project, with the frontend on Firebase Hosting, the API on Vercel and PostgreSQL on Neon. Login and sync need a connection. It does not replace medical care.',
-  avail: ['Private','Available: mountrack-backend.vercel.app','Available','Published']
+  avail: ['Private','Exists, public listing not cleared','Available','Published']
  }
 },
 'dona-joana': {
@@ -181,7 +181,7 @@ mountrack: {
   tests: ['Suíte pytest no backend com 18 arquivos test_*.py: pagamento Pix com mock do Asaas, segurança, CORS, backup, área de entrega, pedidos, cardápio e painel. Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria.'],
   learn: ['Pagamento por Pix dinâmico exige tratar o ciclo do pedido, não só gerar o código.','Documentar o produto (PRD e pacotes) ajudou a manter o escopo do app.'],
   status: 'Projeto complementar com código privado: aplicação Expo e React Native, API FastAPI e MongoDB. Os dados do negócio não são divulgados.',
-  avail: ['Privado','Disponível: dona-joana-marmitaria-web.vercel.app','Disponível','Publicado']
+  avail: ['Privado','Existe, divulgação pública não validada','Disponível','Publicado']
  },
  en: {
   ctx: 'A local lunchbox shop needed to take orders and charge by Pix without checking receipts by hand. The app covers catalog, cart, dynamic Pix checkout and order tracking.',
@@ -192,7 +192,7 @@ mountrack: {
   tests: ['Backend pytest suite with 18 test_*.py files: Pix payment against an Asaas mock, security, CORS, backup, delivery area, orders, menu and dashboard. Existence confirmed from the repository file listing; the tests were not run in this audit.'],
   learn: ['Dynamic Pix payment requires handling the order lifecycle, not just generating the code.','Product documentation (PRD and packages) helped keep the app\'s scope.'],
   status: 'Complementary project with private code: Expo and React Native app, FastAPI API and MongoDB. Business data is not disclosed.',
-  avail: ['Private','Available: dona-joana-marmitaria-web.vercel.app','Available','Published']
+  avail: ['Private','Exists, public listing not cleared','Available','Published']
  }
 },
 cofre: {
