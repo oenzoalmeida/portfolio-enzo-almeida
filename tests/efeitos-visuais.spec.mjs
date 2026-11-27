@@ -46,3 +46,19 @@ test('efeitos: sem rolagem horizontal e capas continuam carregadas em PT e EN', 
   await page.goto('/');
   expect(await page.locator('.project-cover-link img').count()).toBe(14);
 });
+
+test('navegação em tablet: sem rolagem horizontal, menu até 767 px e uma linha a partir de 768 px', async ({ page }) => {
+  for (const w of [700, 720, 768, 820, 900]) {
+    await page.setViewportSize({ width: w, height: 800 });
+    await page.goto('/');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    const menu = await page.locator('#menu').isVisible();
+    expect(menu).toBe(w < 768);
+    if (!menu) expect(await page.locator('.navlinks').evaluate(el => el.getBoundingClientRect().height)).toBeLessThan(60);
+  }
+  await page.setViewportSize({ width: 720, height: 800 });
+  await page.goto('/');
+  await page.locator('#menu').click();
+  await expect(page.locator('#navlinks')).toBeVisible();
+  await expect(page.locator('#navlinks a').first()).toBeVisible();
+});
