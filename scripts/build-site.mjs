@@ -34,3 +34,6 @@ for(const [id,source] of coverSources){
  writeFileSync(join(output,'assets','projects',id,'cover-optimized.png'),result);
  console.log('Thumbnail',id,original.length,'->',result.length,'bytes');
 }
+
+const covers=await import('./covers.mjs');
+console.log('Capas renderizadas:',covers.renderCovers(output),'arquivos; cartões ligados:',covers.wireCovers(output));
