@@ -274,7 +274,7 @@ devjourney: {
   rules: ['Toda movimentação exige quantidade inteira maior que zero, e a saída nunca passa do estoque.','Não há produto com nome duplicado, e valores negativos são rejeitados.','Valor em estoque é quantidade vezes preço.','Na web, a quantidade só muda por movimentação, e o histórico é imutável (regras do Firestore proíbem editar ou excluir).'],
   challenges: [['Levar um programa de terminal para a web sem mudar as regras.','Motor puro em JavaScript (model.js) separado da interface e do Firestore.'],['Preservar histórico ao excluir produtos.','O nome do produto fica denormalizado em cada movimentação.']],
   security: ['Autenticação anônima do Firebase e regras do Firestore que impedem alterar movimentações.'],
-  tests: ['Testes do motor de regras com node --test (tests/model.test.mjs).'],
+  tests: ['Testes com node --test: motor de regras (model.test.mjs), transação de movimentação, regras do Firestore e emulador, além de um teste em Python (tests/test_estoque.py). Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria.'],
   learn: ['Separar regra de negócio da interface permitiu reaproveitar a lógica em outro ambiente.'],
   status: 'Projeto acadêmico preservado e evoluído. Código público, com a versão original em Python e a web em Firebase Hosting.',
   avail: ['Público','Disponível','Disponível','Concluído']
@@ -285,7 +285,7 @@ devjourney: {
   rules: ['Every movement needs a whole quantity above zero, and stock out never exceeds stock.','No duplicate product names, and negative values are rejected.','Stock value is quantity times price.','On the web, quantity changes only through movements, and history is immutable (Firestore rules forbid editing or deleting).'],
   challenges: [['Moving a terminal program to the web without changing the rules.','A pure JavaScript engine (model.js) separated from the UI and Firestore.'],['Keeping history when products are deleted.','The product name is denormalized in each movement.']],
   security: ['Firebase anonymous authentication and Firestore rules that prevent altering movements.'],
-  tests: ['Rule engine tests with node --test (tests/model.test.mjs).'],
+  tests: ['Tests with node --test: rule engine (model.test.mjs), movement transaction, Firestore rules and emulator, plus a Python test (tests/test_estoque.py). Existence confirmed from the repository file listing; the tests were not run in this audit.'],
   learn: ['Separating business rules from the interface allowed reusing the logic in another environment.'],
   status: 'Academic project preserved and evolved. Public code, with the original Python version and the web version on Firebase Hosting.',
   avail: ['Public','Available','Available','Completed']
