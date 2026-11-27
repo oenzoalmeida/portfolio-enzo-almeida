@@ -15,3 +15,20 @@ for(const id of ids){
 }
 console.log('Build estático: 30 páginas e 14 imagens OG de 1200 × 630.');
 
+
+// Generate lightweight card thumbnails without altering the original evidence images.
+const coverSources=[["pentefino","assets/projects/pentefino/interface.png"],["queueflow","assets/projects/queueflow/02-dashboard.png"],["conferevision","assets/projects/conferevision/entrada.png"],["eventpass","assets/projects/eventpass/area-publica.png"],["pratoja","assets/projects/pratoja/inicio.png"],["autociclo","assets/projects/autociclo/inicio.png"],["mountrack","assets/projects/mountrack/interface.png"],["dona-joana","assets/projects/dona-joana/interface.png"],["taskflow","assets/projects/taskflow/login.png"],["sistema-estoque","assets/projects/sistema-estoque/painel.png"],["consumo-energia","assets/projects/consumo-energia/simulador.png"],["calculadora-python","assets/projects/calculadora-python/calculadora-web.png"]];
+for(const [id,source] of coverSources){
+ const original=readFileSync(source);
+ if(original.subarray(0,8).toString('hex')!=='89504e470d0a1a0a')throw Error('Invalid screenshot: '+id);
+ const w=original.readUInt32BE(16),h=original.readUInt32BE(20);
+ if(!w||!h)throw Error('Invalid dimensions: '+id);
+ const scale=Math.min(1,720/w,480/h),tw=Math.max(1,Math.round(w*scale)),th=Math.max(1,Math.round(h*scale));
+ const svg='<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'+tw+'" height="'+th+'"><image width="'+tw+'" height="'+th+'" xlink:href="data:image/png;base64,'+original.toString('base64')+'"/></svg>';
+ const resized=new Resvg(svg).render().asPng();
+ const useOriginal=scale===1&&original.length<=resized.length;
+ const result=useOriginal?original:resized;
+ if(result.readUInt32BE(16)>720||result.readUInt32BE(20)>480)throw Error('Thumbnail oversized: '+id);
+ writeFileSync(join(output,'assets','projects',id,'cover-optimized.png'),result);
+ console.log('Thumbnail',id,original.length,'->',result.length,'bytes');
+}
