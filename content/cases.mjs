@@ -12,7 +12,7 @@ pentefino: {
   security: ['Cada consulta valida o dono. Recurso de outro usuário responde 404, sem revelar que existe.','CSRF de ponta a ponta, rotação de sessão no login e revogação das sessões após troca de senha.','Limite de requisições por IP e por conta em autenticação e criação de auditoria.','Prompt com defesa contra injeção: o texto do documento é tratado como dado. A chave da IA fica fora do repositório e dos logs.'],
   tests: ['Backend com JUnit e MockMvc, incluindo concorrência do worker e o adapter do Gemini contra um servidor HTTP local. Frontend com Vitest e Testing Library, com um fluxo completo pela interface.','Números do README: 91 testes de backend (1 ignorado) e 25 de frontend. Nenhum teste chama a API real do Gemini.'],
   learn: ['Uma fila em banco atende bem um MVP e permite escalar para mais instâncias sem trocar de mecanismo.','Resposta de IA é entrada não confiável: precisa de validação antes de ser gravada.'],
-  status: 'MVP funcional de ponta a ponta, em desenvolvimento. O código é privado e não há demonstração pública autorizada. Não processa PDFs sem texto nativo (sem OCR), e o Gemini real ainda precisa de ajuste fino de parsing no uso contínuo.',
+  status: 'MVP funcional de ponta a ponta, em desenvolvimento. O código é privado e não há demonstração pública autorizada. Não processa PDFs sem texto nativo (sem OCR), e o Gemini real ainda precisa de ajuste fino de parsing no uso contínuo. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Privado','Não divulgada','Disponível','Em desenvolvimento']
  },
  en: {
@@ -23,7 +23,7 @@ pentefino: {
   security: ['Every query checks ownership. Another user\'s resource returns 404, without revealing that it exists.','End-to-end CSRF, session rotation on login and session revocation after a password change.','Per-IP and per-account rate limits on authentication and audit creation.','The prompt defends against injection by treating document text as data. The AI key stays out of the repository and logs.'],
   tests: ['Backend with JUnit and MockMvc, including worker concurrency and the Gemini adapter against a local HTTP server. Frontend with Vitest and Testing Library, including a full flow through the UI.','README figures: 91 backend tests (1 skipped) and 25 frontend tests. No test calls the real Gemini API.'],
   learn: ['A database-backed queue serves an MVP well and scales to more instances without changing the mechanism.','AI output is untrusted input and needs validation before it is stored.'],
-  status: 'Working end-to-end MVP, still in development. The code is private and no public demo is authorized. It does not process PDFs without native text (no OCR), and the live Gemini integration may still need parsing adjustments.',
+  status: 'Working end-to-end MVP, still in development. The code is private and no public demo is authorized. It does not process PDFs without native text (no OCR), and the live Gemini integration may still need parsing adjustments. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Private','Not published','Available','In development']
  }
 },
@@ -36,7 +36,7 @@ queueflow: {
   security: ['Senhas guardadas apenas como hash e JWT com segredo obrigatório no perfil de produção.','Totem e display são públicos por desenho e não coletam dados pessoais de quem é atendido.','Termos de Uso e Política de Privacidade acessíveis a partir do login.'],
   tests: ['Backend com testes de integração e da política de chamada, rodando com ./mvnw test no CI a cada push.','Frontend com Vitest e Testing Library (erros da API, rótulos de status e login). As capturas de tela do repositório saem da suíte E2E.'],
   learn: ['Tempo real pede um desenho de eventos, não só endpoints: definir quais telas ouvem quais eventos simplificou o resto.','Migrações Flyway e E2E tornam a demonstração reproduzível.'],
-  status: 'Aplicação publicada no Azure App Service com PostgreSQL gerenciado (Aiven). Os dados da demonstração podem ser redefinidos. O endereço antigo no Firebase Hosting apenas redireciona.',
+  status: 'Aplicação publicada no Azure App Service com PostgreSQL gerenciado (Aiven). Os dados da demonstração podem ser redefinidos. O endereço antigo no Firebase Hosting apenas redireciona. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Disponível','Disponível','Publicado']
  },
  en: {
@@ -47,7 +47,7 @@ queueflow: {
   security: ['Passwords stored only as hashes, and a mandatory JWT secret in the production profile.','Kiosk and display are public by design and collect no personal data from people being served.','Terms of Use and Privacy Policy are reachable from the login page.'],
   tests: ['Backend integration tests and ticket-calling policy tests, run with ./mvnw test in CI on every push.','Frontend tests with Vitest and Testing Library (API errors, status labels and login). The repository screenshots come from the E2E suite.'],
   learn: ['Real time calls for an event design, not just endpoints: deciding which screens listen to which events simplified the rest.','Flyway migrations and E2E tests make the demo reproducible.'],
-  status: 'Published on Azure App Service with managed PostgreSQL (Aiven). Demo data may be reset. The old Firebase Hosting address only redirects.',
+  status: 'Published on Azure App Service with managed PostgreSQL (Aiven). Demo data may be reset. The old Firebase Hosting address only redirects. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','Available','Available','Published']
  }
 },
@@ -60,7 +60,7 @@ conferevision: {
   security: ['Cada usuário só vê seus kits, análises e imagens anotadas, com verificação de titularidade no servidor.','Cadastro público cria apenas usuários comuns. Recuperação de senha por código secreto rotativo.','A aplicação não inicia em produção sem SECRET_KEY e DATABASE_URL.'],
   tests: ['16 testes de aplicação e segurança (python manage.py test core) e testes de visão com fluxo geométrico, segundo o README.','Os exemplos do repositório são pontuais e não representam uma medida de precisão.'],
   learn: ['A parte difícil de visão computacional em produto é comunicar a incerteza ao usuário.','Separar o pipeline de detecção (vision.py, detector.py) da camada Django facilitou testar cada parte.'],
-  status: 'Aplicação publicada e com endpoint de saúde. Não há validação de precisão para uso comercial. A detecção depende das classes reconhecidas pelo modelo.',
+  status: 'Aplicação publicada e com endpoint de saúde. Não há validação de precisão para uso comercial. A detecção depende das classes reconhecidas pelo modelo. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Disponível','Disponível','Publicado']
  },
  en: {
@@ -71,7 +71,7 @@ conferevision: {
   security: ['Each user sees only their own kits, analyses and annotated images, with ownership checks on the server.','Public sign-up creates regular users only. Password recovery uses a rotating secret code.','The app refuses to start in production without SECRET_KEY and DATABASE_URL.'],
   tests: ['16 application and security tests (python manage.py test core) and vision tests with a geometric flow, per the README.','The repository examples are spot checks and do not measure accuracy.'],
   learn: ['The hard part of computer vision in a product is communicating uncertainty to the user.','Separating the detection pipeline (vision.py, detector.py) from the Django layer made each part easier to test.'],
-  status: 'Published, with a health endpoint. Accuracy has not been validated for commercial use. Detection depends on the classes the model recognizes.',
+  status: 'Published, with a health endpoint. Accuracy has not been validated for commercial use. Detection depends on the classes the model recognizes. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','Available','Available','Published']
  }
 },
@@ -84,7 +84,7 @@ eventpass: {
   security: ['Painel administrativo com sessão segura, senhas com scrypt e limite de 10 tentativas por 15 minutos por IP.','Ranking com nomes abreviados e limite de requisições na inscrição.','Câmera do check-in exige HTTPS, e o cookie de sessão é Secure em produção.'],
   tests: ['Vitest na API e no frontend, incluindo teste de concorrência. O CI roda typecheck, lint com regras de acessibilidade (jsx-a11y), testes e build em cada pull request.'],
   learn: ['Constraints no banco são a última linha de defesa das regras de negócio.','Uma página de demonstração com dados fictícios no navegador mostra o fluxo mesmo sem eventos abertos.'],
-  status: 'Publicado em servidor próprio com SQLite. Há uma variante em homologação com PostgreSQL (Neon) e Netlify Functions, documentada à parte e fora desta página. Ingressos por e-mail não existem.',
+  status: 'Publicado em servidor próprio com SQLite. Há uma variante em homologação com PostgreSQL (Neon) e Netlify Functions, documentada à parte e fora desta página. Ingressos por e-mail não existem. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Disponível','Disponível','Publicado']
  },
  en: {
@@ -95,7 +95,7 @@ eventpass: {
   security: ['Admin panel with secure sessions, scrypt passwords and a limit of 10 attempts per 15 minutes per IP.','Leaderboard with abbreviated names and rate limiting on registration.','The check-in camera requires HTTPS, and the session cookie is Secure in production.'],
   tests: ['Vitest on the API and frontend, including a concurrency test. CI runs typecheck, lint with accessibility rules (jsx-a11y), tests and build on every pull request.'],
   learn: ['Database constraints are the last line of defense for business rules.','A demo page with fictitious in-browser data shows the flow even when no events are open.'],
-  status: 'Published on a dedicated server with SQLite. A PostgreSQL (Neon) and Netlify Functions variant is in staging, documented separately and out of scope here. E-mailed tickets do not exist.',
+  status: 'Published on a dedicated server with SQLite. A PostgreSQL (Neon) and Netlify Functions variant is in staging, documented separately and out of scope here. E-mailed tickets do not exist. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','Available','Available','Published']
  }
 },
@@ -108,7 +108,7 @@ pratoja: {
   security: ['Isolamento lógico por store_id, não banco separado por loja.','Exclusão de conta pela interface: dados pessoais apagados e histórico anonimizado.','Modo demo desligado por padrão, inclusive em produção.'],
   tests: ['Testes de fluxo automatizados executados pelo GitHub Actions a cada push.'],
   learn: ['Multitenancy lógico exige disciplina em todas as consultas. Um teste por fluxo evita esquecer um escopo.','Monólito com Thymeleaf entrega rápido o que o projeto precisa, sem separar frontend.'],
-  status: 'Demonstração publicada em servidor na AWS (Lightsail). As imagens de pratos da demo foram geradas por IA e servem só como ilustração. Os pagamentos são simulados.',
+  status: 'Demonstração publicada em servidor na AWS (Lightsail). As imagens de pratos da demo foram geradas por IA e servem só como ilustração. Os pagamentos são simulados. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Disponível','Disponível','Publicado']
  },
  en: {
@@ -119,7 +119,7 @@ pratoja: {
   security: ['Logical isolation by store_id, not a separate database per store.','Account deletion from the UI: personal data erased and history anonymized.','Demo mode is off by default, including in production.'],
   tests: ['Automated flow tests run by GitHub Actions on every push.'],
   learn: ['Logical multitenancy demands discipline in every query. One test per flow keeps a scope from being forgotten.','A Thymeleaf monolith delivers what the project needs quickly, without a separate frontend.'],
-  status: 'Demo published on an AWS server (Lightsail). The dish images in the demo were AI-generated and are illustrative only. Payments are simulated.',
+  status: 'Demo published on an AWS server (Lightsail). The dish images in the demo were AI-generated and are illustrative only. Payments are simulated. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','Available','Available','Published']
  }
 },
@@ -132,7 +132,7 @@ autociclo: {
   security: ['RLS no banco, perfis cliente e admin e arquivos em storage privado.','A service role key nunca é usada no frontend.','O painel administrativo é de uso interno do autor.'],
   tests: ['Testes unitários com Vitest executados no CI. Os dados do aplicativo exigem conexão: não há modo offline.'],
   learn: ['Política de acesso no banco reduz o que o frontend precisa acertar.','Cálculo de datas tem casos de borda que merecem teste próprio.'],
-  status: 'Publicado em planos gratuitos (Vercel e Supabase): o primeiro acesso pode ser lento e os dados de demonstração podem ser removidos. PWA instalável.',
+  status: 'Publicado em planos gratuitos (Vercel e Supabase): o primeiro acesso pode ser lento e os dados de demonstração podem ser removidos. PWA instalável. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Disponível','Disponível','Publicado']
  },
  en: {
@@ -143,7 +143,7 @@ autociclo: {
   security: ['Database RLS, client and admin profiles, and private file storage.','The service role key is never used on the frontend.','The administration panel is for the author\'s internal use.'],
   tests: ['Unit tests with Vitest run in CI. App data requires a connection: there is no offline mode.'],
   learn: ['Access policies in the database reduce what the frontend must get right.','Date arithmetic has edge cases that deserve their own tests.'],
-  status: 'Published on free plans (Vercel and Supabase): the first load may be slow and demo data may be removed. Installable PWA.',
+  status: 'Published on free plans (Vercel and Supabase): the first load may be slow and demo data may be removed. Installable PWA. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','Available','Available','Published']
  }
 },
@@ -156,7 +156,7 @@ mountrack: {
   security: ['Senhas com bcrypt (custo 12) e sessão por cookie HttpOnly.','Consultas parametrizadas e limite de tentativas por IP na autenticação.','Sem analytics e sem cookies além do de sessão.'],
   tests: ['Testes de backend com node --test: troca obrigatória de senha, revogação de conta, versão dos dados, configuração do banco, consentimento de privacidade e mesma origem. Também há testes de cache de autenticação e de entrada decimal. Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria.'],
   learn: ['Privacidade começa pelo que o sistema decide não expor, inclusive para o administrador.','Documentar o que a segurança não cobre é parte do trabalho.'],
-  status: 'Projeto de portfólio, com frontend no Firebase Hosting, API na Vercel e PostgreSQL no Neon. Login e sincronização exigem conexão. Não substitui acompanhamento médico.',
+  status: 'Projeto de portfólio, com frontend no Firebase Hosting, API na Vercel e PostgreSQL no Neon. Login e sincronização exigem conexão. Não substitui acompanhamento médico. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Privado','Existe, divulgação pública não validada','Disponível','Publicado']
  },
  en: {
@@ -167,7 +167,7 @@ mountrack: {
   security: ['bcrypt passwords (cost 12) and HttpOnly cookie sessions.','Parameterized queries and per-IP attempt limits on authentication.','No analytics and no cookies beyond the session cookie.'],
   tests: ['Backend tests with node --test: forced password change, account revocation, data versioning, database configuration, privacy consent and same-origin checks. There are also tests for the authentication cache and decimal input. Existence confirmed from the repository file listing; the tests were not run in this audit.'],
   learn: ['Privacy starts with what the system chooses not to expose, including to the administrator.','Documenting what the security does not cover is part of the work.'],
-  status: 'Portfolio project, with the frontend on Firebase Hosting, the API on Vercel and PostgreSQL on Neon. Login and sync need a connection. It does not replace medical care.',
+  status: 'Portfolio project, with the frontend on Firebase Hosting, the API on Vercel and PostgreSQL on Neon. Login and sync need a connection. It does not replace medical care. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Private','Exists, public listing not cleared','Available','Published']
  }
 },
@@ -180,7 +180,7 @@ mountrack: {
   security: ['Nenhum segredo é versionado.','A API não expõe dados do negócio sem autenticação.'],
   tests: ['Suíte pytest no backend com 18 arquivos test_*.py: pagamento Pix com mock do Asaas, segurança, CORS, backup, área de entrega, pedidos, cardápio e painel. Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria.'],
   learn: ['Pagamento por Pix dinâmico exige tratar o ciclo do pedido, não só gerar o código.','Documentar o produto (PRD e pacotes) ajudou a manter o escopo do app.'],
-  status: 'Projeto complementar com código privado: aplicação Expo e React Native, API FastAPI e MongoDB. Os dados do negócio não são divulgados.',
+  status: 'Projeto complementar com código privado: aplicação Expo e React Native, API FastAPI e MongoDB. Os dados do negócio não são divulgados. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Privado','Existe, divulgação pública não validada','Disponível','Publicado']
  },
  en: {
@@ -191,7 +191,7 @@ mountrack: {
   security: ['No secret is versioned.','The API does not expose business data without authentication.'],
   tests: ['Backend pytest suite with 18 test_*.py files: Pix payment against an Asaas mock, security, CORS, backup, delivery area, orders, menu and dashboard. Existence confirmed from the repository file listing; the tests were not run in this audit.'],
   learn: ['Dynamic Pix payment requires handling the order lifecycle, not just generating the code.','Product documentation (PRD and packages) helped keep the app\'s scope.'],
-  status: 'Complementary project with private code: Expo and React Native app, FastAPI API and MongoDB. Business data is not disclosed.',
+  status: 'Complementary project with private code: Expo and React Native app, FastAPI API and MongoDB. Business data is not disclosed. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Private','Exists, public listing not cleared','Available','Published']
  }
 },
@@ -204,7 +204,7 @@ cofre: {
   security: ['A chave mestra nunca vai ao frontend, a logs, URLs ou commits.','Cadastro público fechado, com usuários provisionados internamente.','Visualização e cópia de segredos geram trilha de auditoria.'],
   tests: ['Cinco arquivos de teste em scripts/: backup do banco, verificação de marca, veredito do smoke de navegador, invariante de autenticação e plugin PWA. Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria. Este estudo não afirma cobertura total.'],
   learn: ['Segurança de cofre é mais política de acesso e auditoria do que criptografia isolada.','Transação única para dado e auditoria evita trilha incompleta.'],
-  status: 'Uso pessoal, com código privado e sem cadastro público. Esta apresentação não constitui certificação nem auditoria independente de segurança. Os registros do cofre nunca aparecem aqui.',
+  status: 'Uso pessoal, com código privado e sem cadastro público. Esta apresentação não constitui certificação nem auditoria independente de segurança. Os registros do cofre nunca aparecem aqui. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Privado','Não divulgada','Disponível','Em uso pessoal']
  },
  en: {
@@ -215,7 +215,7 @@ cofre: {
   security: ['The master key never reaches the frontend, logs, URLs or commits.','Public sign-up is closed, with users provisioned internally.','Viewing and copying secrets produces an audit trail.'],
   tests: ['Five test files in scripts/: database backup, brand check, browser smoke verdict, authentication invariant and PWA plugin. Existence confirmed from the repository file listing; the tests were not run in this audit. This case study does not claim full coverage.'],
   learn: ['Vault security is more about access policy and auditing than isolated encryption.','A single transaction for data and audit avoids an incomplete trail.'],
-  status: 'Personal use, with private code and no public sign-up. This presentation is not a certification or independent security audit. Vault records never appear here.',
+  status: 'Personal use, with private code and no public sign-up. This presentation is not a certification or independent security audit. Vault records never appear here. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Private','Not published','Available','Personal use']
  }
 },
@@ -228,7 +228,7 @@ taskflow: {
   security: ['Senhas com bcrypt (custo 12) e sessão JWT em cookie HttpOnly e Secure.','CORS restrito ao domínio do frontend e consultas parametrizadas.','Sem analytics nem cookies de terceiros.'],
   tests: ['O CI executa testes do backend com PostgreSQL 16: regressões de segurança, limitador de autenticação, troca de senha, CRUD de tarefas e isolamento entre usuários.'],
   learn: ['Um projeto pequeno é um bom espaço para praticar segurança de verdade.'],
-  status: 'Publicado: frontend no Firebase Hosting, backend serverless na Vercel e PostgreSQL no Neon. O acesso de demonstração está temporariamente indisponível.',
+  status: 'Publicado: frontend no Firebase Hosting, backend serverless na Vercel e PostgreSQL no Neon. O acesso de demonstração está temporariamente indisponível. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Aplicação no ar, sem conta demo','Disponível','Publicado']
  },
  en: {
@@ -239,7 +239,7 @@ taskflow: {
   security: ['bcrypt passwords (cost 12) and JWT sessions in HttpOnly, Secure cookies.','CORS restricted to the frontend domain and parameterized queries.','No analytics or third-party cookies.'],
   tests: ['CI runs backend tests with PostgreSQL 16: security regressions, authentication rate limiter, password change, task CRUD and user isolation.'],
   learn: ['A small project is a good place to practice real security.'],
-  status: 'Published: frontend on Firebase Hosting, serverless backend on Vercel and PostgreSQL on Neon. The demo login is temporarily unavailable.',
+  status: 'Published: frontend on Firebase Hosting, serverless backend on Vercel and PostgreSQL on Neon. The demo login is temporarily unavailable. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','App online, no demo account','Available','Published']
  }
 },
@@ -252,7 +252,7 @@ devjourney: {
   security: ['Nenhum dado sai do navegador: o progresso fica no armazenamento local.'],
   tests: ['Cinco scripts de teste em Node (tests, tests-code, tests-languages, tests-selfhost e audit-tests). Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria. O README lista a revisão funcional e de acessibilidade no navegador como pendência.'],
   learn: ['Simular o ambiente permite ensinar sem expor o usuário a execução arbitrária.'],
-  status: 'Protótipo v0.5 em desenvolvimento, com código privado. Sem sincronização entre dispositivos. Evoluir para execução real exigiria ambientes isolados.',
+  status: 'Protótipo v0.5 em desenvolvimento, com código privado. Sem sincronização entre dispositivos. Evoluir para execução real exigiria ambientes isolados. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Privado','Não divulgada','Disponível','Protótipo em desenvolvimento']
  },
  en: {
@@ -263,7 +263,7 @@ devjourney: {
   security: ['No data leaves the browser: progress stays in local storage.'],
   tests: ['Five Node test scripts (tests, tests-code, tests-languages, tests-selfhost and audit-tests). Existence confirmed from the repository file listing; the tests were not run in this audit. The README lists a functional and accessibility review in the browser as pending.'],
   learn: ['Simulating the environment lets you teach without exposing users to arbitrary execution.'],
-  status: 'Prototype v0.5 in development, with private code. No sync across devices. Moving to real execution would require isolated environments.',
+  status: 'Prototype v0.5 in development, with private code. No sync across devices. Moving to real execution would require isolated environments. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Private','Not published','Available','Prototype in development']
  }
 },
@@ -276,7 +276,7 @@ devjourney: {
   security: ['Autenticação anônima do Firebase e regras do Firestore que impedem alterar movimentações.'],
   tests: ['Testes com node --test: motor de regras (model.test.mjs), transação de movimentação, regras do Firestore e emulador, além de um teste em Python (tests/test_estoque.py). Existência confirmada pela listagem do repositório; os testes não foram executados nesta auditoria.'],
   learn: ['Separar regra de negócio da interface permitiu reaproveitar a lógica em outro ambiente.'],
-  status: 'Projeto acadêmico preservado e evoluído. Código público, com a versão original em Python e a web em Firebase Hosting.',
+  status: 'Projeto acadêmico preservado e evoluído. Código público, com a versão original em Python e a web em Firebase Hosting. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Disponível','Disponível','Concluído']
  },
  en: {
@@ -287,7 +287,7 @@ devjourney: {
   security: ['Firebase anonymous authentication and Firestore rules that prevent altering movements.'],
   tests: ['Tests with node --test: rule engine (model.test.mjs), movement transaction, Firestore rules and emulator, plus a Python test (tests/test_estoque.py). Existence confirmed from the repository file listing; the tests were not run in this audit.'],
   learn: ['Separating business rules from the interface allowed reusing the logic in another environment.'],
-  status: 'Academic project preserved and evolved. Public code, with the original Python version and the web version on Firebase Hosting.',
+  status: 'Academic project preserved and evolved. Public code, with the original Python version and the web version on Firebase Hosting. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','Available','Available','Completed']
  }
 },
@@ -300,7 +300,7 @@ devjourney: {
   security: ['Sessão JWT em cookie HttpOnly, Secure e SameSite, CORS restrito e consultas parametrizadas.','Exclusão definitiva da conta pela interface.'],
   tests: ['O CI executa testes das regras de cálculo do frontend e, no backend com PostgreSQL 16, testes de segurança, limitador, troca de senha e versionamento otimista.'],
   learn: ['Cálculo puro e testável deixa a interface fina.'],
-  status: 'Projeto acadêmico evoluído e publicado: frontend no Firebase Hosting, backend na Vercel e PostgreSQL no Neon. A conta de demonstração está temporariamente indisponível.',
+  status: 'Projeto acadêmico evoluído e publicado: frontend no Firebase Hosting, backend na Vercel e PostgreSQL no Neon. A conta de demonstração está temporariamente indisponível. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Aplicação no ar, sem conta demo','Disponível','Publicado']
  },
  en: {
@@ -311,7 +311,7 @@ devjourney: {
   security: ['JWT sessions in HttpOnly, Secure, SameSite cookies, restricted CORS and parameterized queries.','Permanent account deletion from the interface.'],
   tests: ['CI runs frontend calculation tests and, on the backend with PostgreSQL 16, security, rate limiter, password change and optimistic versioning tests.'],
   learn: ['Pure, testable calculation keeps the interface thin.'],
-  status: 'Academic project evolved and published: frontend on Firebase Hosting, backend on Vercel and PostgreSQL on Neon. The demo account is temporarily unavailable.',
+  status: 'Academic project evolved and published: frontend on Firebase Hosting, backend on Vercel and PostgreSQL on Neon. The demo account is temporarily unavailable. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','App online, no demo account','Available','Published']
  }
 },
@@ -324,7 +324,7 @@ devjourney: {
   security: ['Roda no navegador, sem backend e sem coleta de dados.'],
   tests: ['Testes com node --test (tests/calculator.test.mjs).'],
   learn: ['Preservar o original ao lado da evolução mostra o que mudou e o que não mudou.'],
-  status: 'Projeto acadêmico preservado e evoluído. Código público, com a versão desktop e a web em Firebase Hosting.',
+  status: 'Projeto acadêmico preservado e evoluído. Código público, com a versão desktop e a web em Firebase Hosting. Hospedagem, domínios e números citados vêm do README do projeto e não foram reverificados nesta revisão.',
   avail: ['Público','Disponível','Disponível','Concluído']
  },
  en: {
@@ -335,7 +335,7 @@ devjourney: {
   security: ['Runs in the browser, with no backend and no data collection.'],
   tests: ['Tests with node --test (tests/calculator.test.mjs).'],
   learn: ['Keeping the original beside its evolution shows what changed and what did not.'],
-  status: 'Academic project preserved and evolved. Public code, with the desktop version and the web version on Firebase Hosting.',
+  status: 'Academic project preserved and evolved. Public code, with the desktop version and the web version on Firebase Hosting. Hosting, domains and figures cited come from the project README and were not re-verified in this review.',
   avail: ['Public','Available','Available','Completed']
  }
 }
